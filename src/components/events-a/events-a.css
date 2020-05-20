@@ -1,0 +1,16 @@
+header .container{
+  max-width: 1200px;
+}
+
+.titles_events{
+  margin-top: 70px;
+}
+
+.widget_content{
+  margin: 18px 0 10px 0;
+}
+
+.new_single_post_widget_title {
+  font-weight: bold;
+  font-size: 20px;
+}

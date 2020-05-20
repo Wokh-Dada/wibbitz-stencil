@@ -1,0 +1,30 @@
+.widget_photo_single_page{
+  height: 285px;
+  width: 100%;
+  background-image: url("https://via.placeholder.com/201x180?text=Text");
+  background-size: cover;
+  background-position: center;
+}
+
+.widget_content{
+  margin: 18px 0 10px 0;
+}
+
+.widget_read_toggle{
+  margin-top: 15px;
+}
+
+.widget_read_toggle a:hover{
+  color: #0056fb;
+}
+
+.new_single_post_widget_title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (max-width: 992px) {
+  .widget_margin{
+    margin-top: 40px;
+  }
+}
