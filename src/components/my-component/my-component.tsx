@@ -1,4 +1,5 @@
 import {Component, Prop, h} from '@stencil/core';
+import {blog, firstPage, header} from "../../utils/mock";
 
 @Component({
   tag: 'my-component',
@@ -6,115 +7,77 @@ import {Component, Prop, h} from '@stencil/core';
   shadow: false
 })
 export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  firstPage = {
-    menu: [
-      {linkName: 'Articles'},
-      {linkName: 'Events'},
-      {linkName: 'Reports'},
-      {linkName: 'Costumer Stories'}
-    ],
-    sidebar: [
-      {
-        category: 'Report',
-        title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
-        btnText: 'Read Report'
-      },
-      {
-        category: 'Blog Post',
-        title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
-        btnText: 'Read Report'
-      },
-      {
-        category: 'Webinar',
-        title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
-        btnText: 'Read Report'
-      },
-      {
-        category: 'Report',
-        title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
-        btnText: 'Read Report'
-      }
-    ],
-    newPost: [
-      {block: 'new-post', category: 'Blog Post', title: '4 organic ways to improve your website KPIs', btnText: 'Read Report'},
-      {block: 'new-post', category: 'Blog Post', title: 'How to turn your next event into a video content goldmine', btnText: 'Read Report'},
-      {block: 'new-post', category: 'Blog Post', title: 'How to quickly turn ypur podcast into a video script', btnText: 'Read Report'}
-    ],
-    popularAside: [
-      {
-        category: 'Blog Post',
-        title: 'Micro-influencers and B2C brand videos: A match made in heaven',
-        btnText: 'Read Story'
-      },
-      {
-        category: 'Webinar',
-        title: 'Webinar: Improving content marketing through visual storytelling',
-        btnText: 'Watch Webinar'
-      },
-      {
-        category: 'Report',
-        title: 'How to reach audiences with social video: From Millennials to Gen Z',
-        btnText: 'Read Report'
-      }
-    ],
-    events: [
-      {
-        block: 'events',
-        category: 'Blog Post',
-        title: '4 organic ways to improve your website KPIs',
-        btnText: 'Read Report'
-      },
-      {
-        block: 'events',
-        category: 'Blog Post',
-        title: 'How to turn your next event into a video content goldmine',
-        btnText: 'Read Report'
-      },
-      {
-        block: 'events',
-        category: 'Blog Post',
-        title: 'How to quickly turn ypur podcast into a video script',
-        btnText: 'Read Report'
-      }
-    ],
-    newlistner: [
-      {
-        title: 'Ready to take a test drive?',
-        subtitle: 'We`ll help you elevate strategy. Prices starting from $49 a month.',
-        linkText: 'See pricing',
-        btnText: 'Try it Free',
-        theme: true
-      }
-    ]
-
-  };
-
   render() {
-    return(
+    return (
       <div>
-        <my-header menu = {this.firstPage.menu}/>
-        {/*<news-a sidebar = {this.firstPage.sidebar}/>*/}
-        {/*<new-post newPost = {this.firstPage.newPost}/>*/}
-        {/*<popular-resources popularAside = {this.firstPage.popularAside}/>*/}
-        {/*<events-a events = {this.firstPage.events}/>*/}
-        {/*<new-listiner newlistner={this.firstPage.newlistner}/>*/}
-        {/**/}
-        <app-blog></app-blog>
+        <my-header
+          menu={header.menu}
+          logoUrl={header.logoUrl}
+          onClickOnMenu={(item) => {this.clickOnMenu(item)}}
+          subscribeText={header.subscribeText}
+          onClickOnSubscribeButton =
+            { ()=> {console.log('нажали на кнопку button subscribe')} }
+        />
+        <news-a
+          sidebar = {firstPage.sidebar}
+          onClickOnSidebar={(event) => this.clickOnSidebar(event)}
+          onClickOnNewsButton={(event) => this.clickOnNewsButton(event)}
+        />
+        <new-post
+          newPost = {firstPage.newPost}
+          onClickNewPost =
+            { (event)=> {this.onClickOnNewPost(event)} }
+        />
+        <popular-resources
+          popularAside = {firstPage.popularAside}
+          onClickOnAside =
+            { (event)=> {this.clickOnAside(event)}}
+        />
+        <events-a
+          events = {firstPage.events}
+          // onClickReadReportOnEventsNewSinglePost =
+          //   { ()=> {console.log('нажали на кнопку ReadReport в  events')} }
+        />
+        <new-listiner newlistner={firstPage.newlistner}/>
+
+        {/*<app-blog p={blog.p}></app-blog>*/}
         <footer-a/>
       </div>
-  );
+    );
+  }
+
+  /**
+   * клик по элементам меню
+   */
+  public clickOnMenu({detail}){
+    return console.log('clickOnMenu', detail)
+  }
+
+  /**
+   * клик по элементам сайдбара
+   */
+  public clickOnSidebar({detail}) {
+    return console.log("clickOnSidebar", detail);
+  }
+
+  /**
+   * клик по button в компоненете news
+   */
+  public clickOnNewsButton({detail}) {
+    return console.log("clickOnNewsButton", detail);
+  }
+
+  /**
+   * клик по ссылке read report в компоненте newpost
+   */
+  public onClickOnNewPost({detail}) {
+    return console.log("clickOnNewPost", detail);
+  }
+
+  /**
+   * клик по элементам aside sidebar в компоненте popular resources
+   */
+  public clickOnAside({detail}) {
+    return console.log("clickOnAside", detail);
   }
 }

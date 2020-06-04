@@ -1,0 +1,22 @@
+.news_saidbar{
+  margin-bottom: 20px;
+}
+
+.widget_photo{
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.header_widget_title{
+  margin-top: 10px;
+}
+
+.news_right_widget{
+  display: flex;
+}
+
+.right_item_widget{
+  flex-direction: row;
+}

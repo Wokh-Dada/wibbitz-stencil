@@ -5,47 +5,77 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AbdullakhMyHeader, } from "./components/res/view/my-header/interface/common.interface";
 export namespace Components {
     interface AppBlog {
+        "p": any;
     }
     interface EventsA {
         "events": any[];
     }
     interface FooterA {
     }
+    interface MenuItem {
+        /**
+          * массив меню
+         */
+        "arr": any;
+    }
     interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
     interface MyHeader {
-        "menu": any[];
+        /**
+          * ссылка на изображение логотипа
+         */
+        "logoUrl": string;
+        /**
+          * массив меню
+         */
+        "menu": AbdullakhMyHeader[];
+        /**
+          * ссылка на изображение логотипа
+         */
+        "subscribeText": string;
     }
     interface NewListiner {
         "newlistner": any[];
     }
     interface NewPost {
+        /**
+          * массив Sidebar
+         */
         "newPost": any[];
     }
     interface NewSinglePost {
+        "f": string;
+        /**
+          * массив блоков в компоненте newSinglePost
+         */
         "newPost": any[];
     }
     interface NewsA {
+        /**
+          * массив Sidebar
+         */
         "sidebar": any[];
     }
     interface PopularResources {
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
         "popularAside": any[];
     }
     interface PopularResourcesAside {
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
         "popularAside": any[];
     }
     interface SidebarA {
-        "sidebar": any[];
+        /**
+          * путь url для изображения Sidebar
+         */
+        "arr": any;
     }
 }
 declare global {
@@ -66,6 +96,12 @@ declare global {
     var HTMLFooterAElement: {
         prototype: HTMLFooterAElement;
         new (): HTMLFooterAElement;
+    };
+    interface HTMLMenuItemElement extends Components.MenuItem, HTMLStencilElement {
+    }
+    var HTMLMenuItemElement: {
+        prototype: HTMLMenuItemElement;
+        new (): HTMLMenuItemElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -125,6 +161,7 @@ declare global {
         "app-blog": HTMLAppBlogElement;
         "events-a": HTMLEventsAElement;
         "footer-a": HTMLFooterAElement;
+        "menu-item": HTMLMenuItemElement;
         "my-component": HTMLMyComponentElement;
         "my-header": HTMLMyHeaderElement;
         "new-listiner": HTMLNewListinerElement;
@@ -138,50 +175,128 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppBlog {
+        "p"?: any;
     }
     interface EventsA {
         "events"?: any[];
+        /**
+          * клик по кнопке Read Report в компоненте newSinglePost
+         */
+        "onClickReadReportOnNewSinglePost"?: (event: CustomEvent<any>) => void;
     }
     interface FooterA {
     }
+    interface MenuItem {
+        /**
+          * массив меню
+         */
+        "arr"?: any;
+        /**
+          * клик по конкретному меню
+         */
+        "onClickOnMenu"?: (event: CustomEvent<any>) => void;
+    }
     interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
     }
     interface MyHeader {
-        "menu"?: any[];
+        /**
+          * ссылка на изображение логотипа
+         */
+        "logoUrl"?: string;
+        /**
+          * массив меню
+         */
+        "menu"?: AbdullakhMyHeader[];
+        /**
+          * клик по конкретному меню
+         */
+        "onClickOnMenu"?: (event: CustomEvent<AbdullakhMyHeader>) => void;
+        /**
+          * клик по кнопке подписаться
+         */
+        "onClickOnSubscribeButton"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по логотипу
+         */
+        "onClickToLogo"?: (event: CustomEvent<any>) => void;
+        /**
+          * ссылка на изображение логотипа
+         */
+        "subscribeText"?: string;
     }
     interface NewListiner {
         "newlistner"?: any[];
     }
     interface NewPost {
+        /**
+          * массив Sidebar
+         */
         "newPost"?: any[];
+        /**
+          * клик по кнопке Read Report в компоненте newSinglePost
+         */
+        "onClickNewPost"?: (event: CustomEvent<any>) => void;
     }
     interface NewSinglePost {
+        "f"?: string;
+        /**
+          * массив блоков в компоненте newSinglePost
+         */
         "newPost"?: any[];
+        /**
+          * клик по кнопке Read Report в компоненте newSinglePost
+         */
+        "onClickNewPost"?: (event: CustomEvent<any>) => void;
     }
     interface NewsA {
+        /**
+          * клик по кнопке Read Report в Sidebar
+         */
+        "onClickOnNewsButton"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по кнопке Read Report в Sidebar
+         */
+        "onClickOnSidebar"?: (event: CustomEvent<any>) => void;
+        /**
+          * массив Sidebar
+         */
         "sidebar"?: any[];
     }
     interface PopularResources {
+        /**
+          * клик по кнопке Read Report в Sidebar
+         */
+        "onClickOnAside"?: (event: CustomEvent<any>) => void;
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
         "popularAside"?: any[];
     }
     interface PopularResourcesAside {
+        /**
+          * клик по кнопке Read Report в Sidebar
+         */
+        "onClickOnAside"?: (event: CustomEvent<any>) => void;
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
         "popularAside"?: any[];
     }
     interface SidebarA {
-        "sidebar"?: any[];
+        /**
+          * путь url для изображения Sidebar
+         */
+        "arr"?: any;
+        /**
+          * клик по кнопке Read Report в Sidebar
+         */
+        "onClickOnSidebar"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "app-blog": AppBlog;
         "events-a": EventsA;
         "footer-a": FooterA;
+        "menu-item": MenuItem;
         "my-component": MyComponent;
         "my-header": MyHeader;
         "new-listiner": NewListiner;
@@ -200,6 +315,7 @@ declare module "@stencil/core" {
             "app-blog": LocalJSX.AppBlog & JSXBase.HTMLAttributes<HTMLAppBlogElement>;
             "events-a": LocalJSX.EventsA & JSXBase.HTMLAttributes<HTMLEventsAElement>;
             "footer-a": LocalJSX.FooterA & JSXBase.HTMLAttributes<HTMLFooterAElement>;
+            "menu-item": LocalJSX.MenuItem & JSXBase.HTMLAttributes<HTMLMenuItemElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-header": LocalJSX.MyHeader & JSXBase.HTMLAttributes<HTMLMyHeaderElement>;
             "new-listiner": LocalJSX.NewListiner & JSXBase.HTMLAttributes<HTMLNewListinerElement>;
