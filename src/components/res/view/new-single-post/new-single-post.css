@@ -1,7 +1,6 @@
 .widget_photo_single_page{
   height: 285px;
   width: 100%;
-  background-image: url("https://via.placeholder.com/201x180?text=Text");
   background-size: cover;
   background-position: center;
 }

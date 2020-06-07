@@ -1,5 +1,5 @@
-import {Component, Prop, h} from '@stencil/core';
-import {blog, firstPage, header} from "../../utils/mock";
+import {Component, h} from '@stencil/core';
+import {blog, firstPage, footer, header} from "../../utils/mock";
 
 @Component({
   tag: 'my-component',
@@ -13,35 +13,52 @@ export class MyComponent {
         <my-header
           menu={header.menu}
           logoUrl={header.logoUrl}
-          onClickOnMenu={(item) => {this.clickOnMenu(item)}}
           subscribeText={header.subscribeText}
-          onClickOnSubscribeButton =
-            { ()=> {console.log('нажали на кнопку button subscribe')} }
+          onClickOnLogo={() => console.log('clickOnLogo: вы сделали клик по Logo')}
+          onClickOnMenu={(item) => {
+            this.clickOnMenu(item)
+          }}
+          onClickOnSwitch={() => console.log('clickOnSwitch: вы сделали клик по перключателю тем')}
+          onClickOnSeach={() => console.log('clickOnSwitch: вы сделали клик по кнопке search')}
+          onClickOnInput={() => console.log('clickOnInput: вы сделали клик по input')}
+          onClickOnSubscribeButton={() => {
+            console.log('нажали на кнопку button subscribe')
+          }}
         />
-        <news-a
-          sidebar = {firstPage.sidebar}
-          onClickOnSidebar={(event) => this.clickOnSidebar(event)}
-          onClickOnNewsButton={(event) => this.clickOnNewsButton(event)}
-        />
-        <new-post
-          newPost = {firstPage.newPost}
-          onClickNewPost =
-            { (event)=> {this.onClickOnNewPost(event)} }
-        />
-        <popular-resources
-          popularAside = {firstPage.popularAside}
-          onClickOnAside =
-            { (event)=> {this.clickOnAside(event)}}
-        />
-        <events-a
-          events = {firstPage.events}
-          // onClickReadReportOnEventsNewSinglePost =
-          //   { ()=> {console.log('нажали на кнопку ReadReport в  events')} }
-        />
-        <new-listiner newlistner={firstPage.newlistner}/>
+        {/*<news-a*/}
+        {/*  newsImg={firstPage.newsImg}*/}
+        {/*  news={firstPage.news}*/}
+        {/*  sidebar={firstPage.sidebar}*/}
+        {/*  onClickOnNews={(event) => console.log('clickOnNews:', event)}*/}
+        {/*/>*/}
+        {/*<new-post*/}
+        {/*  newPostTitle={firstPage.newPostTitle}*/}
+        {/*  newPost={firstPage.newPost}*/}
+        {/*  onClickNewPost={(event) => this.clickOnNewPost(event)}*/}
+        {/*  onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}*/}
+        {/*/>*/}
+        {/*<popular-resources*/}
+        {/*  popularAsideTitle={firstPage.popularAsideTitle}*/}
+        {/*  popularAside={firstPage.popularAside}*/}
+        {/*  popularBanner={firstPage.popularBanner}*/}
+        {/*  onClickOnPopular={(event) => this.clickOnPopular(event)}*/}
+        {/*/>*/}
+        {/*<events-a*/}
+        {/*  eventsTitle={firstPage.eventsTitle}*/}
+        {/*  events={firstPage.events}*/}
+        {/*  onClickOnEvents={(event) => this.clickOnEvents(event)}*/}
+        {/*  onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}*/}
+        {/*/>*/}
+        {/*<new-listiner*/}
+        {/*  newlistner={firstPage.newlistner}*/}
+        {/*  onClickOnListiner={(event) => this.clickOnListiner(event)}*/}
+        {/*/>*/}
 
-        {/*<app-blog p={blog.p}></app-blog>*/}
-        <footer-a/>
+        <app-blog p={blog.p}></app-blog>
+        <footer-a
+          footer={footer}
+          onClickOnFooter={(event) => this.clickOnFooter(event)}
+        />
       </div>
     );
   }
@@ -49,35 +66,71 @@ export class MyComponent {
   /**
    * клик по элементам меню
    */
-  public clickOnMenu({detail}){
-    return console.log('clickOnMenu', detail)
+  public clickOnLogo({detail}) {
+    return console.log('clickOnLogo:',  detail)
+  }
+
+  /**
+   * клик по элементам меню
+   */
+  public clickOnMenu({detail}) {
+    return console.log('clickOnMenu:', detail)
   }
 
   /**
    * клик по элементам сайдбара
    */
   public clickOnSidebar({detail}) {
-    return console.log("clickOnSidebar", detail);
+    return console.log("clickOnSidebar:", detail);
   }
 
   /**
    * клик по button в компоненете news
    */
   public clickOnNewsButton({detail}) {
-    return console.log("clickOnNewsButton", detail);
+    return console.log("clickOnNewsButton:", detail);
   }
 
   /**
    * клик по ссылке read report в компоненте newpost
    */
-  public onClickOnNewPost({detail}) {
-    return console.log("clickOnNewPost", detail);
+  public clickOnNewPost({detail}) {
+    return console.log("clickOnNewPost:", detail);
+  }
+
+  /**
+   * клик по ссылке read report в компоненте newpost
+   */
+  public clickOnNewSinglePost({detail}) {
+    return console.log("clickOnNewSinglePost:", detail);
   }
 
   /**
    * клик по элементам aside sidebar в компоненте popular resources
    */
-  public clickOnAside({detail}) {
-    return console.log("clickOnAside", detail);
+  public clickOnPopular({detail}) {
+    return console.log("clickOnPopular:", detail);
   }
+
+  /**
+   * клик по ссылке read report в компоненте newpost
+   */
+  public clickOnEvents({detail}) {
+    return console.log("clickOnEvents:", detail);
+  }
+
+  /**
+   * клик по button в компоненете Listiner
+   */
+  public clickOnListiner({detail}) {
+    return console.log("clickOnListiner:", detail);
+  }
+
+  /**
+   * клик по button в компоненете Listiner
+   */
+  public clickOnFooter({detail}) {
+    return console.log("clickOnFooter:", detail);
+  }
+
 }

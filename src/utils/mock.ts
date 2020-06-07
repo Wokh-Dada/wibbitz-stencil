@@ -10,72 +10,111 @@ export const header = {
 };
 
 export const firstPage = {
+  newsImg: "https://images.unsplash.com/photo-1589400369397-3363f6afeada?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+  news: [
+    {
+      category: 'Blog Post',
+      title: 'How to opimize your Facebook & Instagram video ads for succes',
+      subtitle: 'Instagram and Facebook video ads qre extremely popular among marketers these days. Not only are they more engaging and entertaining, they`re loved by many...',
+      btnText: 'Read Story'
+    }
+  ],
   sidebar: [
     {
       category: 'Report',
       title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
       btnText: 'Read Report',
-      widgetImg: 'https://via.placeholder.com/201x180?text=Text'
+      widgetImg: 'https://via.placeholder.com/201x180?text=sidebar'
     },
     {
       category: 'Blog Post',
       title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
       btnText: 'Read Report',
-      widgetImg: 'https://via.placeholder.com/201x180?text=Text'
+      widgetImg: 'https://via.placeholder.com/201x180?text=sidebar'
     },
     {
       category: 'Webinar',
       title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
       btnText: 'Read Report',
-      widgetImg: 'https://via.placeholder.com/201x180?text=Text'
+      widgetImg: 'https://via.placeholder.com/201x180?text=sidebar'
     },
     {
       category: 'Report',
       title: 'Explore Intagram Video: How to convert, engage, and get more Intagra...',
       btnText: 'Read Report',
-      widgetImg: 'https://via.placeholder.com/201x180?text=Text'
+      widgetImg: 'https://via.placeholder.com/201x180?text=sidebar'
     }
   ],
+  newPostTitle: 'New Blog Posts',
   newPost: [
-    {block: 'new-post', category: 'Blog Post', title: '4 organic ways to improve your website KPIs', btnText: 'Read Report'},
-    {block: 'new-post', category: 'Blog Post', title: 'How to turn your next event into a video content goldmine', btnText: 'Read Report'},
-    {block: 'new-post', category: 'Blog Post', title: 'How to quickly turn ypur podcast into a video script', btnText: 'Read Report'}
+    {
+      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
+      block: 'new-post',
+      category: 'Blog Post',
+      title: '4 organic ways to improve your website KPIs',
+      btnText: 'Read Report'
+    },
+    {
+      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
+      block: 'new-post',
+      category: 'Blog Post',
+      title: 'How to turn your next event into a video content goldmine',
+      btnText: 'Read Report'
+    },
+    {
+      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
+      block: 'new-post',
+      category: 'Blog Post',
+      title: 'How to quickly turn ypur podcast into a video script',
+      btnText: 'Read Report'
+    }
   ],
-
+  popularAsideTitle: 'Popular Resources',
   popularAside: [
     {
       category: 'Blog Post',
       title: 'Micro-influencers and B2C brand videos: A match made in heaven',
       btnText: 'Read Story',
-      asidetImg:'https://via.placeholder.com/201x180?text=Text'
+      asidetImg: 'https://via.placeholder.com/201x180?text=popularAside'
     },
     {
       category: 'Webinar',
       title: 'Webinar: Improving content marketing through visual storytelling',
       btnText: 'Watch Webinar',
-      asidetImg:'https://via.placeholder.com/201x180?text=Text'
+      asidetImg: 'https://via.placeholder.com/201x180?text=popularAside'
     },
     {
       category: 'Report',
       title: 'How to reach audiences with social video: From Millennials to Gen Z',
       btnText: 'Read Report',
-      asidetImg:'https://via.placeholder.com/201x180?text=Text'
+      asidetImg: 'https://via.placeholder.com/201x180?text=popularAside'
     }
   ],
+  popularBanner: [
+    {
+      id: 'popularBanner',
+      title: 'Storyteller Circle Event Series',
+      btnText: 'Watch Webinar'
+    }
+  ],
+  eventsTitle: 'Upcoming Events',
   events: [
     {
+      eventsImg: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: '4 organic ways to improve your website KPIs',
       btnText: 'Read Report'
     },
     {
+      eventsImg: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: 'How to turn your next event into a video content goldmine',
       btnText: 'Read Report'
     },
     {
+      eventsImg: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: 'How to quickly turn ypur podcast into a video script',
@@ -97,9 +136,134 @@ export const firstPage = {
 
 export const blog = {
   p: [
-    {text:
-        "##Add to Story## options streamlined into icons\n"+
+    {
+      text:
+        "##Add to Story## options streamlined into icons\n" +
         "2. *Project and Workflow State* are grouped together to better visualize their close relationship\n" +
-        "3. *Story Type* is now placed on the right side when creating a new Story for consistency\n"}
+        "3. *Story Type* is now placed on the right side when creating a new Story for consistency\n"
+    }
   ]
 }
+
+export const footer = [
+  {
+    title: 'Solutions',
+    id: 'Solutions',
+    footerLinkComplited: true,
+    footerChildLinkComplited: false,
+    footerItemLink: [
+      {
+        id: 'Studio',
+        linkName: 'Studio'
+      },
+      {
+        id: 'Lightbox',
+        linkName: 'Lightbox'
+      },
+      {
+        id: 'Wavi',
+        linkName: 'Wavi'
+      }
+    ]
+  },
+  {
+    title: 'Why Wibbitz',
+    id: 'Why Wibbitz',
+    footerLinkComplited: true,
+    footerChildLinkComplited: false,
+    footerItemLink: [
+      {
+        id: 'Marketing',
+        linkName: 'Marketing'
+      },
+      {
+        id: 'Social Media',
+        linkName: 'Social Media'
+      },
+      {
+        id: 'News & Editorial',
+        linkName: 'News & Editorial'
+      },
+      {
+        id: 'Agencies',
+        linkName: 'Agencies'
+      },
+      {
+        id: 'Internal',
+        linkName: 'Internal'
+      },
+      {
+        id: 'Communications',
+        linkName: 'Communications'
+      },
+      {
+        id: 'Enterprice',
+        linkName: 'Enterprice'
+      }
+    ]
+  },
+  {
+    title: 'Resources',
+    id: 'Resources',
+    footerLinkComplited: true,
+    footerChildLinkComplited: false,
+    footerItemLink: [
+      {
+        id: 'Blog',
+        linkName: 'Blog'
+      },
+      {
+        id: 'Customers',
+        linkName: 'Customers'
+      },
+      {
+        id: 'Video Showcase',
+        linkName: 'Video Showcase'
+      },
+      {
+        id: 'Watch Demo',
+        linkName: 'Watch Demo'
+      }
+    ]
+  },
+  {
+    title: 'Pricing',
+    id: 'Pricing',
+    footerLinkComplited: false,
+    footerChildLinkComplited: true,
+    footerChildrenLink: [
+      {
+        title: 'Company',
+        id: 'Company',
+        footerItemLink: [
+          {
+            id: 'About Us',
+            linkName: 'About Us'
+          },
+          {
+            id: 'Jobs',
+            linkName: 'Jobs'
+          },
+          {
+            id: 'Press',
+            linkName: 'Press'
+          }
+        ]
+      },
+      {
+        title: 'Legal',
+        id: 'Legal',
+        footerItemLink: [
+          {
+            id: 'Terms and Conditions',
+            linkName: 'Terms and Conditions'
+          },
+          {
+            id: 'Privacy Policy',
+            linkName: 'Privacy Policy'
+          }
+        ]
+      }
+    ]
+  },
+]

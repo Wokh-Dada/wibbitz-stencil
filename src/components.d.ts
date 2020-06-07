@@ -11,9 +11,17 @@ export namespace Components {
         "p": any;
     }
     interface EventsA {
+        /**
+          * массив компоненту Events
+         */
         "events": any[];
+        /**
+          * заголовок компонента Events
+         */
+        "eventsTitle": string;
     }
     interface FooterA {
+        "footer": any;
     }
     interface MenuItem {
         /**
@@ -42,18 +50,29 @@ export namespace Components {
     }
     interface NewPost {
         /**
-          * массив Sidebar
+          * массив newsPost
          */
         "newPost": any[];
+        /**
+          * текст заголовка
+         */
+        "newPostTitle": string;
     }
     interface NewSinglePost {
-        "f": string;
         /**
           * массив блоков в компоненте newSinglePost
          */
-        "newPost": any[];
+        "arr": any;
     }
     interface NewsA {
+        /**
+          * массив news-main-block
+         */
+        "news": any[];
+        /**
+          * ссылка на изображение логотипа
+         */
+        "newsImg": string;
         /**
           * массив Sidebar
          */
@@ -64,16 +83,52 @@ export namespace Components {
           * массив для блоков компонента popular-resources-aside
          */
         "popularAside": any[];
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
+        "popularAsideTitle": string;
+        /**
+          * массив для блоков компонента popular-resources-banner
+         */
+        "popularBanner": any[];
     }
     interface PopularResourcesAside {
         /**
           * массив для блоков компонента popular-resources-aside
          */
-        "popularAside": any[];
+        "arr": any;
+    }
+    interface PopularResourcesBanner {
+        /**
+          * массив для блоков компонента popular-resources-banner
+         */
+        "arr": any;
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
+        "popularAsideTitle": string;
+    }
+    interface SAbdullakhFooterMenu {
+        /**
+          * массив элементов Sidebar
+         */
+        "arr": any;
+    }
+    interface SAbdullakhListiner {
+        /**
+          * массив Listener
+         */
+        "arr": any;
+    }
+    interface SAbdullakhNewsMainBlock {
+        /**
+          * массив Sidebar
+         */
+        "arr": any;
     }
     interface SidebarA {
         /**
-          * путь url для изображения Sidebar
+          * массив элементов Sidebar
          */
         "arr": any;
     }
@@ -151,6 +206,30 @@ declare global {
         prototype: HTMLPopularResourcesAsideElement;
         new (): HTMLPopularResourcesAsideElement;
     };
+    interface HTMLPopularResourcesBannerElement extends Components.PopularResourcesBanner, HTMLStencilElement {
+    }
+    var HTMLPopularResourcesBannerElement: {
+        prototype: HTMLPopularResourcesBannerElement;
+        new (): HTMLPopularResourcesBannerElement;
+    };
+    interface HTMLSAbdullakhFooterMenuElement extends Components.SAbdullakhFooterMenu, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhFooterMenuElement: {
+        prototype: HTMLSAbdullakhFooterMenuElement;
+        new (): HTMLSAbdullakhFooterMenuElement;
+    };
+    interface HTMLSAbdullakhListinerElement extends Components.SAbdullakhListiner, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhListinerElement: {
+        prototype: HTMLSAbdullakhListinerElement;
+        new (): HTMLSAbdullakhListinerElement;
+    };
+    interface HTMLSAbdullakhNewsMainBlockElement extends Components.SAbdullakhNewsMainBlock, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhNewsMainBlockElement: {
+        prototype: HTMLSAbdullakhNewsMainBlockElement;
+        new (): HTMLSAbdullakhNewsMainBlockElement;
+    };
     interface HTMLSidebarAElement extends Components.SidebarA, HTMLStencilElement {
     }
     var HTMLSidebarAElement: {
@@ -170,6 +249,10 @@ declare global {
         "news-a": HTMLNewsAElement;
         "popular-resources": HTMLPopularResourcesElement;
         "popular-resources-aside": HTMLPopularResourcesAsideElement;
+        "popular-resources-banner": HTMLPopularResourcesBannerElement;
+        "s-abdullakh-footer-menu": HTMLSAbdullakhFooterMenuElement;
+        "s-abdullakh-listiner": HTMLSAbdullakhListinerElement;
+        "s-abdullakh-news-main-block": HTMLSAbdullakhNewsMainBlockElement;
         "sidebar-a": HTMLSidebarAElement;
     }
 }
@@ -178,13 +261,26 @@ declare namespace LocalJSX {
         "p"?: any;
     }
     interface EventsA {
+        /**
+          * массив компоненту Events
+         */
         "events"?: any[];
+        /**
+          * заголовок компонента Events
+         */
+        "eventsTitle"?: string;
         /**
           * клик по кнопке Read Report в компоненте newSinglePost
          */
-        "onClickReadReportOnNewSinglePost"?: (event: CustomEvent<any>) => void;
+        "onClickOnEvents"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по в компоненте NewSinglePost
+         */
+        "onClickOnNewSinglePost"?: (event: CustomEvent<any>) => void;
     }
     interface FooterA {
+        "footer"?: any;
+        "onClickOnFooter"?: (event: CustomEvent<any>) => void;
     }
     interface MenuItem {
         /**
@@ -208,17 +304,29 @@ declare namespace LocalJSX {
          */
         "menu"?: AbdullakhMyHeader[];
         /**
+          * клик по input
+         */
+        "onClickOnInput"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по логотипу
+         */
+        "onClickOnLogo"?: (event: CustomEvent<any>) => void;
+        /**
           * клик по конкретному меню
          */
         "onClickOnMenu"?: (event: CustomEvent<AbdullakhMyHeader>) => void;
+        /**
+          * клик по кнопке search
+         */
+        "onClickOnSeach"?: (event: CustomEvent<any>) => void;
         /**
           * клик по кнопке подписаться
          */
         "onClickOnSubscribeButton"?: (event: CustomEvent<any>) => void;
         /**
-          * клик по логотипу
+          * клик по перключателю тем
          */
-        "onClickToLogo"?: (event: CustomEvent<any>) => void;
+        "onClickOnSwitch"?: (event: CustomEvent<any>) => void;
         /**
           * ссылка на изображение логотипа
          */
@@ -226,37 +334,52 @@ declare namespace LocalJSX {
     }
     interface NewListiner {
         "newlistner"?: any[];
+        /**
+          * клик в Listiner
+         */
+        "onClickOnListiner"?: (event: CustomEvent<any>) => void;
     }
     interface NewPost {
         /**
-          * массив Sidebar
+          * массив newsPost
          */
         "newPost"?: any[];
         /**
-          * клик по кнопке Read Report в компоненте newSinglePost
+          * текст заголовка
+         */
+        "newPostTitle"?: string;
+        /**
+          * клик по в компоненте NewPost
          */
         "onClickNewPost"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по в компоненте NewSinglePost
+         */
+        "onClickOnNewSinglePost"?: (event: CustomEvent<any>) => void;
     }
     interface NewSinglePost {
-        "f"?: string;
         /**
           * массив блоков в компоненте newSinglePost
          */
-        "newPost"?: any[];
+        "arr"?: any;
         /**
-          * клик по кнопке Read Report в компоненте newSinglePost
+          * клик по в компоненте NewSinglePost
          */
-        "onClickNewPost"?: (event: CustomEvent<any>) => void;
+        "onClickOnNewSinglePost"?: (event: CustomEvent<any>) => void;
     }
     interface NewsA {
         /**
-          * клик по кнопке Read Report в Sidebar
+          * массив news-main-block
          */
-        "onClickOnNewsButton"?: (event: CustomEvent<any>) => void;
+        "news"?: any[];
         /**
-          * клик по кнопке Read Report в Sidebar
+          * ссылка на изображение логотипа
          */
-        "onClickOnSidebar"?: (event: CustomEvent<any>) => void;
+        "newsImg"?: string;
+        /**
+          * клик по кнопке в компоненте news
+         */
+        "onClickOnNews"?: (event: CustomEvent<any>) => void;
         /**
           * массив Sidebar
          */
@@ -264,33 +387,85 @@ declare namespace LocalJSX {
     }
     interface PopularResources {
         /**
-          * клик по кнопке Read Report в Sidebar
+          * клик по компоненту popular-resources
          */
-        "onClickOnAside"?: (event: CustomEvent<any>) => void;
+        "onClickOnPopular"?: (event: CustomEvent<any>) => void;
         /**
           * массив для блоков компонента popular-resources-aside
          */
         "popularAside"?: any[];
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
+        "popularAsideTitle"?: string;
+        /**
+          * массив для блоков компонента popular-resources-banner
+         */
+        "popularBanner"?: any[];
     }
     interface PopularResourcesAside {
         /**
-          * клик по кнопке Read Report в Sidebar
-         */
-        "onClickOnAside"?: (event: CustomEvent<any>) => void;
-        /**
           * массив для блоков компонента popular-resources-aside
          */
-        "popularAside"?: any[];
-    }
-    interface SidebarA {
+        "arr"?: any;
         /**
-          * путь url для изображения Sidebar
+          * клик по компоненту  popular-resources-aside в popular-resources
+         */
+        "onClickOnPopular"?: (event: CustomEvent<any>) => void;
+    }
+    interface PopularResourcesBanner {
+        /**
+          * массив для блоков компонента popular-resources-banner
          */
         "arr"?: any;
         /**
           * клик по кнопке Read Report в Sidebar
          */
-        "onClickOnSidebar"?: (event: CustomEvent<any>) => void;
+        "onClickOnAside"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по компоненту  popular-resources-aside в popular-banner
+         */
+        "onClickOnPopular"?: (event: CustomEvent<any>) => void;
+        /**
+          * массив для блоков компонента popular-resources-aside
+         */
+        "popularAsideTitle"?: string;
+    }
+    interface SAbdullakhFooterMenu {
+        /**
+          * массив элементов Sidebar
+         */
+        "arr"?: any;
+    }
+    interface SAbdullakhListiner {
+        /**
+          * массив Listener
+         */
+        "arr"?: any;
+        /**
+          * клик по кнопке button в Listiner
+         */
+        "onClickOnListiner"?: (event: CustomEvent<any>) => void;
+    }
+    interface SAbdullakhNewsMainBlock {
+        /**
+          * массив Sidebar
+         */
+        "arr"?: any;
+        /**
+          * клик по компоненту News
+         */
+        "onClickOnNews"?: (event: CustomEvent<any>) => void;
+    }
+    interface SidebarA {
+        /**
+          * массив элементов Sidebar
+         */
+        "arr"?: any;
+        /**
+          * клик по кнопке в компоненте news
+         */
+        "onClickOnNews"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "app-blog": AppBlog;
@@ -305,6 +480,10 @@ declare namespace LocalJSX {
         "news-a": NewsA;
         "popular-resources": PopularResources;
         "popular-resources-aside": PopularResourcesAside;
+        "popular-resources-banner": PopularResourcesBanner;
+        "s-abdullakh-footer-menu": SAbdullakhFooterMenu;
+        "s-abdullakh-listiner": SAbdullakhListiner;
+        "s-abdullakh-news-main-block": SAbdullakhNewsMainBlock;
         "sidebar-a": SidebarA;
     }
 }
@@ -324,6 +503,10 @@ declare module "@stencil/core" {
             "news-a": LocalJSX.NewsA & JSXBase.HTMLAttributes<HTMLNewsAElement>;
             "popular-resources": LocalJSX.PopularResources & JSXBase.HTMLAttributes<HTMLPopularResourcesElement>;
             "popular-resources-aside": LocalJSX.PopularResourcesAside & JSXBase.HTMLAttributes<HTMLPopularResourcesAsideElement>;
+            "popular-resources-banner": LocalJSX.PopularResourcesBanner & JSXBase.HTMLAttributes<HTMLPopularResourcesBannerElement>;
+            "s-abdullakh-footer-menu": LocalJSX.SAbdullakhFooterMenu & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterMenuElement>;
+            "s-abdullakh-listiner": LocalJSX.SAbdullakhListiner & JSXBase.HTMLAttributes<HTMLSAbdullakhListinerElement>;
+            "s-abdullakh-news-main-block": LocalJSX.SAbdullakhNewsMainBlock & JSXBase.HTMLAttributes<HTMLSAbdullakhNewsMainBlockElement>;
             "sidebar-a": LocalJSX.SidebarA & JSXBase.HTMLAttributes<HTMLSidebarAElement>;
         }
     }

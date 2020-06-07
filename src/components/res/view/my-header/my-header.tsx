@@ -24,14 +24,29 @@ export class MyHeader implements ComponentInterface {
   @Prop() subscribeText: string;
 
   /**
+   * клик по логотипу
+   * */
+  @Event() clickOnLogo: EventEmitter;
+
+  /**
    * клик по конкретному меню
    * */
   @Event() clickOnMenu: EventEmitter<AbdullakhMyHeader>;
 
   /**
-   * клик по логотипу
+   * клик по перключателю тем
    * */
-  @Event() clickToLogo: EventEmitter;
+  @Event() clickOnSwitch: EventEmitter;
+
+  /**
+   * клик по кнопке search
+   * */
+  @Event() clickOnSeach: EventEmitter;
+
+  /**
+   * клик по input
+   * */
+  @Event() clickOnInput: EventEmitter;
 
   /**
    * клик по кнопке подписаться
@@ -51,31 +66,31 @@ export class MyHeader implements ComponentInterface {
         <div class="container_update">
           <div class="row main__menu">
             <div class="col-auto">
-              <div class="logo" style={{backgroundImage: "url(" + this.logoUrl + ")"}}>
-                <a onClick=
-                     {() => {
-                       this.clickToLogo.emit()
-                     }}
-                   class="navbar-brand"/>
+              <div
+                class="logo"
+                style={{backgroundImage: "url(" + this.logoUrl + ")"}}
+                onClick={() => this.clickOnLogo.emit()}
+              >
+                <a class="navbar-brand"/>
               </div>
             </div>
             <div class="col">
               <nav>
-                <a href="#" class="icon"
-                   ref={(el) => {
-                     this.navOpenTag = el
-                   }}
-                   onClick={() => this.toggleMobileMenu()}>
+                <a
+                  class="icon"
+                  ref={(el) => {
+                    this.navOpenTag = el
+                  }}
+                  onClick={() => this.toggleMobileMenu()}
+                >
                   &#9776;
                 </a>
                 <div
                   class="topnav" id="none"
-                  ref={(el) => {
-                    this.navMenuTag = el
-                  }}
+                  ref={(el) => this.navMenuTag = el}
                 >
                   <ItemLink arr={this.menu}></ItemLink>
-                  <span>
+                  <span onClick={() => this.clickOnSwitch.emit()}>
                     <a>
                       <i class="fas fa-toggle-off pl-1"/>
                       theme_1
@@ -85,7 +100,7 @@ export class MyHeader implements ComponentInterface {
               </nav>
             </div>
             <div class="col-auto d-none d-xl-block">
-              <div class="header_search_block">
+              <div class="header_search_block" onClick={() => this.clickOnSeach.emit()}>
                 <a href="#" class="nav-link">
                   <span class="material-icons">
                     search
@@ -94,11 +109,19 @@ export class MyHeader implements ComponentInterface {
               </div>
               <div class="header_subscribe_block">
                 <div class="input-group">
-                  <input type="email" placeholder="Enter work email" class="header_subscribe_input"/>
+                  <input
+                    type="email"
+                    placeholder="Enter work email"
+                    class="header_subscribe_input"
+                    onClick={() => this.clickOnInput.emit()}
+                  />
                   <div class="input-group-append">
-                    <button class="header_btn" onClick={() => {
-                      this.clickOnSubscribeButton.emit()
-                    }}>
+                    <button
+                      class="header_btn"
+                      onClick={() => {
+                        this.clickOnSubscribeButton.emit()
+                      }}
+                    >
                       <span>
                         {this.subscribeText}
                       </span>

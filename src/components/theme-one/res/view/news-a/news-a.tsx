@@ -7,46 +7,37 @@ import {Component, ComponentInterface, Event, EventEmitter, h, Prop} from '@sten
 })
 export class NewsA implements ComponentInterface {
   /**
+   * ссылка на изображение логотипа
+   * */
+  @Prop() newsImg: string;
+
+  /**
+   * массив news-main-block
+   * */
+  @Prop() news: any[];
+
+  /**
    * массив Sidebar
    * */
   @Prop() sidebar: any[];
 
   /**
-   * клик по кнопке Read Report в Sidebar
+   * клик по кнопке в компоненте news
    * */
-  @Event() clickOnNewsButton: EventEmitter;
-
-  /**
-   * клик по кнопке Read Report в Sidebar
-   * */
-  @Event() clickOnSidebar: EventEmitter;
+  @Event() clickOnNews: EventEmitter;
 
   render() {
     return (
       <div class="container">
         <div class="row news">
           <div class="col-lg-7 col-12">
-            <div class="main_img">
-
+            <div
+              class="main_img"
+              style={{backgroundImage: "url(" + this.newsImg + ")"}}
+              onClick={() => this.clickOnNews.emit(this.newsImg)}
+            >
             </div>
-            <div>
-              <div class="category_blog">
-                Blog Post
-              </div>
-              <div class="news_section_title_block">
-                How to opimize your Facebook & Instagram video ads for succes
-              </div>
-              <div class="news_section_subtitle_block">
-                Instagram and Facebook video ads qre extremely popular among marketers these days. Not only are they
-                more
-                engaging and entertaining, they`re loved by many...
-              </div>
-              <div class="text-center text-lg-left">
-                <button class="my_btn new_section_btn" onClick={() => this.clickOnNewsButton.emit(event)}>
-                  Read Story
-                </button>
-              </div>
-            </div>
+            <NewsMainBlock arr={this.news}/>
           </div>
           <div class="col-lg-5 col-12 mt-lg-0 mt-5">
             <aside class="news_right_widget">
@@ -62,12 +53,23 @@ export class NewsA implements ComponentInterface {
 }
 
 /*
-* компонентная функция для вывода элементов меню
+* компонентная функция для вывода элементов news-main-block
+ */
+const NewsMainBlock = (props) => {
+  return props.arr.map((item) => {
+    return (
+      <s-abdullakh-news-main-block arr={item}/>
+    );
+  })
+}
+
+/*
+* компонентная функция для вывода элементов sidebar
  */
 const Sidebar = (props) => {
   return props.arr.map((item) => {
     return (
-      <sidebar-a arr={item}></sidebar-a>
+      <sidebar-a arr={item}/>
     );
   })
 }

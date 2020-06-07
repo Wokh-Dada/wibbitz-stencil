@@ -6,34 +6,69 @@ import {Component, ComponentInterface, Event, EventEmitter, h, Prop} from '@sten
   shadow: false,
 })
 export class EventsA implements ComponentInterface {
-  @Prop()events: any[];
+
+  /**
+   * массив компоненту Events
+   * */
+  @Prop() events: any[];
+
+  /**
+   * заголовок компонента Events
+   * */
+  @Prop() eventsTitle: string;
 
   /**
    * клик по кнопке Read Report в компоненте newSinglePost
    * */
-  @Event() clickReadReportOnNewSinglePost: EventEmitter;
+  @Event() clickOnEvents: EventEmitter;
 
+  /**
+   * клик по в компоненте NewSinglePost
+   * */
+  @Event() clickOnNewSinglePost: EventEmitter;
 
   render() {
     return (
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="titles">
-              Upcoming Events
+            <div class="titles" onClick={ () => this.clickOnEvents.emit(this.eventsTitle) }>
+              {this.eventsTitle}
             </div>
           </div>
           <div class="row">
-            <div class="col-lg">
-              <new-single-post
-                newPost={this.events}
-              />
-           </div>
+            <NewSinglePost arr={this.events} />
+          </div>
         </div>
       </div>
-  </div>
-
-  );
+    );
   }
+}
 
+/*
+* компонентная функция для вывода элементов news-main-block
+ */
+const NewSinglePost = (props) => {
+  return props.arr.map((item) => {
+    return (
+      <div class={bootstrapClass(item.block)}>
+        <new-single-post
+          arr={item}
+        />
+      </div>
+    );
+  })
+}
+
+/*
+* функция для присваивания класса бутстрап
+ */
+function bootstrapClass(x) {
+  switch (x) {
+    case 'new-post':
+      return 'col-lg-4 col-12';
+
+    case 'events':
+      return 'col-lg';
+  }
 }

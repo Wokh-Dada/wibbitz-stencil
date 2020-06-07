@@ -9,53 +9,78 @@ export class PopularResources implements ComponentInterface {
   /**
    * массив для блоков компонента popular-resources-aside
    * */
-  @Prop()popularAside: any[];
+  @Prop() popularAside: any[];
 
   /**
-   * клик по кнопке Read Report в Sidebar
+   * массив для блоков компонента popular-resources-banner
    * */
-  @Event() clickOnAside: EventEmitter;
+  @Prop() popularBanner: any[];
+
+  /**
+   * массив для блоков компонента popular-resources-aside
+   * */
+  @Prop() popularAsideTitle: string;
+
+  /**
+   * клик по компоненту popular-resources
+   * */
+  @Event() clickOnPopular: EventEmitter;
 
   render() {
     return (
       <section class="container mt-5">
         <div class="row pt-5">
           <div class="col-12">
-            <div class="resources_title">
-              Popular Resources
+            <div class="resources_title" onClick={() => this.clickOnPopular.emit(this.popularAsideTitle)}>
+              {this.popularAsideTitle}
             </div>
           </div>
           <div class="col-lg-7 col-12">
             <div class="row">
               <div class="col-12 mb-2">
-                <popular-resources-aside
-                  popularAside={this.popularAside}
+                <PopularAside
+                  arr={this.popularAside}
                 />
               </div>
             </div>
           </div>
-          <div class="col-lg-5 d-none d-lg-block">
+          <div class="col-lg-5 d-none d-lg-block" onClick={() => this.clickOnPopular.emit(this.popularBanner)}>
             <div class="right_section">
               <div class="row h-100">
                 <div class="col-12 align-self-center">
-                  <div class="right_section_child">
-                    <div class="right_section_title">
-                      Storyteller Circle Event Series
-                    </div>
-                    <div class="widget_read_toggle">
-                      <a href="#">
-                        Watch Webinar
-                      </a>
-                    </div>
-                  </div>
+                  <PopularBanner arr={this.popularBanner}/>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
     );
   }
+}
 
+/*
+* компонентная функция для вывода элементов news-main-block
+ */
+const PopularAside = (props) => {
+  return props.arr.map((item) => {
+    return (
+      <div class="col-12 mb-2">
+        <popular-resources-aside arr={item}/>
+      </div>
+    );
+  })
+}
+
+/*
+* компонентная функция для вывода элементов news-main-block
+ */
+const PopularBanner = (props) => {
+  return props.arr.map((item) => {
+    return (
+      <div class="col-12 mb-2">
+        <popular-resources-banner arr={item}/>
+      </div>
+    );
+  })
 }
