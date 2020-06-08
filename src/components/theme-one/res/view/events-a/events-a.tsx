@@ -32,12 +32,12 @@ export class EventsA implements ComponentInterface {
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="titles" onClick={ () => this.clickOnEvents.emit(this.eventsTitle) }>
+            <div class="titles" onClick={() => this.clickOnEvents.emit(this.eventsTitle)}>
               {this.eventsTitle}
             </div>
           </div>
           <div class="row">
-            <NewSinglePost arr={this.events} />
+            <NewSinglePost arr={this.events}/>
           </div>
         </div>
       </div>

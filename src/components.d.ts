@@ -108,6 +108,18 @@ export namespace Components {
          */
         "popularAsideTitle": string;
     }
+    interface SAbdullakhFooterIconBlock {
+        "arr": any;
+    }
+    interface SAbdullakhFooterIcons {
+        "arr": any;
+    }
+    interface SAbdullakhFooterLinks {
+        /**
+          * массив элементов Sidebar
+         */
+        "arr": any;
+    }
     interface SAbdullakhFooterMenu {
         /**
           * массив элементов Sidebar
@@ -212,6 +224,24 @@ declare global {
         prototype: HTMLPopularResourcesBannerElement;
         new (): HTMLPopularResourcesBannerElement;
     };
+    interface HTMLSAbdullakhFooterIconBlockElement extends Components.SAbdullakhFooterIconBlock, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhFooterIconBlockElement: {
+        prototype: HTMLSAbdullakhFooterIconBlockElement;
+        new (): HTMLSAbdullakhFooterIconBlockElement;
+    };
+    interface HTMLSAbdullakhFooterIconsElement extends Components.SAbdullakhFooterIcons, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhFooterIconsElement: {
+        prototype: HTMLSAbdullakhFooterIconsElement;
+        new (): HTMLSAbdullakhFooterIconsElement;
+    };
+    interface HTMLSAbdullakhFooterLinksElement extends Components.SAbdullakhFooterLinks, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhFooterLinksElement: {
+        prototype: HTMLSAbdullakhFooterLinksElement;
+        new (): HTMLSAbdullakhFooterLinksElement;
+    };
     interface HTMLSAbdullakhFooterMenuElement extends Components.SAbdullakhFooterMenu, HTMLStencilElement {
     }
     var HTMLSAbdullakhFooterMenuElement: {
@@ -250,6 +280,9 @@ declare global {
         "popular-resources": HTMLPopularResourcesElement;
         "popular-resources-aside": HTMLPopularResourcesAsideElement;
         "popular-resources-banner": HTMLPopularResourcesBannerElement;
+        "s-abdullakh-footer-icon-block": HTMLSAbdullakhFooterIconBlockElement;
+        "s-abdullakh-footer-icons": HTMLSAbdullakhFooterIconsElement;
+        "s-abdullakh-footer-links": HTMLSAbdullakhFooterLinksElement;
         "s-abdullakh-footer-menu": HTMLSAbdullakhFooterMenuElement;
         "s-abdullakh-listiner": HTMLSAbdullakhListinerElement;
         "s-abdullakh-news-main-block": HTMLSAbdullakhNewsMainBlockElement;
@@ -431,6 +464,20 @@ declare namespace LocalJSX {
          */
         "popularAsideTitle"?: string;
     }
+    interface SAbdullakhFooterIconBlock {
+        "arr"?: any;
+        "onClickOnFooter"?: (event: CustomEvent<any>) => void;
+    }
+    interface SAbdullakhFooterIcons {
+        "arr"?: any;
+        "onClickOnFooter"?: (event: CustomEvent<any>) => void;
+    }
+    interface SAbdullakhFooterLinks {
+        /**
+          * массив элементов Sidebar
+         */
+        "arr"?: any;
+    }
     interface SAbdullakhFooterMenu {
         /**
           * массив элементов Sidebar
@@ -481,6 +528,9 @@ declare namespace LocalJSX {
         "popular-resources": PopularResources;
         "popular-resources-aside": PopularResourcesAside;
         "popular-resources-banner": PopularResourcesBanner;
+        "s-abdullakh-footer-icon-block": SAbdullakhFooterIconBlock;
+        "s-abdullakh-footer-icons": SAbdullakhFooterIcons;
+        "s-abdullakh-footer-links": SAbdullakhFooterLinks;
         "s-abdullakh-footer-menu": SAbdullakhFooterMenu;
         "s-abdullakh-listiner": SAbdullakhListiner;
         "s-abdullakh-news-main-block": SAbdullakhNewsMainBlock;
@@ -504,6 +554,9 @@ declare module "@stencil/core" {
             "popular-resources": LocalJSX.PopularResources & JSXBase.HTMLAttributes<HTMLPopularResourcesElement>;
             "popular-resources-aside": LocalJSX.PopularResourcesAside & JSXBase.HTMLAttributes<HTMLPopularResourcesAsideElement>;
             "popular-resources-banner": LocalJSX.PopularResourcesBanner & JSXBase.HTMLAttributes<HTMLPopularResourcesBannerElement>;
+            "s-abdullakh-footer-icon-block": LocalJSX.SAbdullakhFooterIconBlock & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterIconBlockElement>;
+            "s-abdullakh-footer-icons": LocalJSX.SAbdullakhFooterIcons & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterIconsElement>;
+            "s-abdullakh-footer-links": LocalJSX.SAbdullakhFooterLinks & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterLinksElement>;
             "s-abdullakh-footer-menu": LocalJSX.SAbdullakhFooterMenu & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterMenuElement>;
             "s-abdullakh-listiner": LocalJSX.SAbdullakhListiner & JSXBase.HTMLAttributes<HTMLSAbdullakhListinerElement>;
             "s-abdullakh-news-main-block": LocalJSX.SAbdullakhNewsMainBlock & JSXBase.HTMLAttributes<HTMLSAbdullakhNewsMainBlockElement>;

@@ -146,124 +146,77 @@ export const blog = {
 }
 
 export const footer = [
-  {
-    title: 'Solutions',
-    id: 'Solutions',
-    footerLinkComplited: true,
-    footerChildLinkComplited: false,
-    footerItemLink: [
-      {
-        id: 'Studio',
-        linkName: 'Studio'
-      },
-      {
-        id: 'Lightbox',
-        linkName: 'Lightbox'
-      },
-      {
-        id: 'Wavi',
-        linkName: 'Wavi'
-      }
-    ]
-  },
-  {
-    title: 'Why Wibbitz',
-    id: 'Why Wibbitz',
-    footerLinkComplited: true,
-    footerChildLinkComplited: false,
-    footerItemLink: [
-      {
-        id: 'Marketing',
-        linkName: 'Marketing'
-      },
-      {
-        id: 'Social Media',
-        linkName: 'Social Media'
-      },
-      {
-        id: 'News & Editorial',
-        linkName: 'News & Editorial'
-      },
-      {
-        id: 'Agencies',
-        linkName: 'Agencies'
-      },
-      {
-        id: 'Internal',
-        linkName: 'Internal'
-      },
-      {
-        id: 'Communications',
-        linkName: 'Communications'
-      },
-      {
-        id: 'Enterprice',
-        linkName: 'Enterprice'
-      }
-    ]
-  },
-  {
-    title: 'Resources',
-    id: 'Resources',
-    footerLinkComplited: true,
-    footerChildLinkComplited: false,
-    footerItemLink: [
-      {
-        id: 'Blog',
-        linkName: 'Blog'
-      },
-      {
-        id: 'Customers',
-        linkName: 'Customers'
-      },
-      {
-        id: 'Video Showcase',
-        linkName: 'Video Showcase'
-      },
-      {
-        id: 'Watch Demo',
-        linkName: 'Watch Demo'
-      }
-    ]
-  },
-  {
-    title: 'Pricing',
-    id: 'Pricing',
-    footerLinkComplited: false,
-    footerChildLinkComplited: true,
-    footerChildrenLink: [
-      {
-        title: 'Company',
-        id: 'Company',
-        footerItemLink: [
-          {
-            id: 'About Us',
-            linkName: 'About Us'
-          },
-          {
-            id: 'Jobs',
-            linkName: 'Jobs'
-          },
-          {
-            id: 'Press',
-            linkName: 'Press'
-          }
-        ]
-      },
-      {
-        title: 'Legal',
-        id: 'Legal',
-        footerItemLink: [
-          {
-            id: 'Terms and Conditions',
-            linkName: 'Terms and Conditions'
-          },
-          {
-            id: 'Privacy Policy',
-            linkName: 'Privacy Policy'
-          }
-        ]
-      }
-    ]
-  },
+  [
+    {
+      firstBlockTitle: 'The online video editor trusted by content creators to make professional video in minutes.',
+      icons: [
+        {id: 'facebook', name: 'facebook'},
+        {id: 'twitter', name: 'twitter'},
+        {id: 'invision', name: 'invision'},
+        {id: 'instagram', name: 'instagram'}
+      ]
+    }
+  ],
+  [
+    {
+      title: 'Solutions',
+      id: 'Solutions',
+      items: [
+        {id: 'Studio', linkName: 'Studio'},
+        {id: 'Lightbox', linkName: 'Lightbox'},
+        {id: 'Wavi', linkName: 'Wavi'}
+      ]
+    },
+  ],
+  [
+    {
+      title: 'Why Wibbitz',
+      id: 'Why Wibbitz',
+      items: [
+        {id: 'Marketing', linkName: 'Marketing'},
+        {id: 'Social Media', linkName: 'Social Media'},
+        {id: 'News & Editorial', linkName: 'News & Editorial'},
+        {id: 'Agencies', linkName: 'Agencies'},
+        {id: 'Internal', linkName: 'Internal'},
+        {id: 'Communications', linkName: 'Communications'},
+        {id: 'Enterprice', linkName: 'Enterprice'}
+      ]
+    },
+  ],
+  [
+    {
+      title: 'Resources',
+      id: 'Resources',
+      items: [
+        {id: 'Blog', linkName: 'Blog'},
+        {id: 'Customers', linkName: 'Customers'},
+        {id: 'Video Showcase', linkName: 'Video Showcase'},
+        {id: 'Watch Demo', linkName: 'Watch Demo'}
+      ]
+    },
+  ],
+  [
+    {
+      title: 'Pricing',
+      id: 'Pricing',
+      items: [
+        {id: '', linkName: ''}
+      ]
+    },
+    {
+      title: 'Company',
+      items: [
+        {id: 'About Us', linkName: 'About Us'},
+        {id: 'Jobs', linkName: 'Jobs'},
+        {id: 'Press', linkName: 'Press'}
+      ]
+    },
+    {
+      title: 'Legal',
+      items: [
+        {id: 'Terms and Conditions', linkName: 'Terms and Conditions'},
+        {id: 'Privacy Policy', linkName: 'Privacy Policy'}
+      ]
+    }
+  ]
 ]

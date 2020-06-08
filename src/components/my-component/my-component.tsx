@@ -14,7 +14,7 @@ export class MyComponent {
           menu={header.menu}
           logoUrl={header.logoUrl}
           subscribeText={header.subscribeText}
-          onClickOnLogo={() => console.log('clickOnLogo: вы сделали клик по Logo')}
+          onClickOnLogo={(event) => this.clickOnLogo(event)}
           onClickOnMenu={(item) => {
             this.clickOnMenu(item)
           }}
@@ -54,7 +54,7 @@ export class MyComponent {
         {/*  onClickOnListiner={(event) => this.clickOnListiner(event)}*/}
         {/*/>*/}
 
-        <app-blog p={blog.p}></app-blog>
+        {/*<app-blog p={blog.p}></app-blog>*/}
         <footer-a
           footer={footer}
           onClickOnFooter={(event) => this.clickOnFooter(event)}

@@ -69,7 +69,7 @@ export class MyHeader implements ComponentInterface {
               <div
                 class="logo"
                 style={{backgroundImage: "url(" + this.logoUrl + ")"}}
-                onClick={() => this.clickOnLogo.emit()}
+                onClick={() => this.clickOnLogo.emit(this.logoUrl)}
               >
                 <a class="navbar-brand"/>
               </div>
@@ -78,9 +78,7 @@ export class MyHeader implements ComponentInterface {
               <nav>
                 <a
                   class="icon"
-                  ref={(el) => {
-                    this.navOpenTag = el
-                  }}
+                  ref={(el) => this.navOpenTag = el}
                   onClick={() => this.toggleMobileMenu()}
                 >
                   &#9776;
@@ -89,8 +87,10 @@ export class MyHeader implements ComponentInterface {
                   class="topnav" id="none"
                   ref={(el) => this.navMenuTag = el}
                 >
-                  <ItemLink arr={this.menu}></ItemLink>
-                  <span onClick={() => this.clickOnSwitch.emit()}>
+                  <ItemLink arr={this.menu}/>
+                  <span
+                    onClick={() => this.clickOnSwitch.emit()}
+                  >
                     <a>
                       <i class="fas fa-toggle-off pl-1"/>
                       theme_1

@@ -5,7 +5,7 @@ import {Component, ComponentInterface, h, Prop} from '@stencil/core';
   styleUrl: 's-abdullakh-footer-menu.css',
   shadow: false,
 })
-export class FooterA implements ComponentInterface {
+export class SAbdullakhFooterMenu implements ComponentInterface {
   /**
    * массив элементов Sidebar
    * */
@@ -13,50 +13,23 @@ export class FooterA implements ComponentInterface {
 
   render() {
     return (
-      <div class="title_links">
-        {this.arr.title}
-        <div class="footer_links">
-          {this.arr.footerLinkComplited ? <FootLink arr={this.arr.footerItemLink}/> : ''}
-          {this.arr.footerChildLinkComplited ? <FootInLink arr={this.arr.footerChildrenLink}/> : ''}
-        </div>
-      </div>
+      <FooterMenu arr={this.arr} />
     );
   }
 }
 
 /*
-* компонентная функция для вывода элементов меню
+* компонентная функция для вывода элементов footer2
  */
-const FootLink = (props) => {
+const FooterMenu = (props) => {
   return props.arr.map((item) => {
     return (
-      <span class="footer_link">
-      <a href="">
-        {item.linkName}
-      </a>
-    </span>
-    );
-  })
-}
-
-const FootInLink = (props) => {
-  return props.arr.map((item) => {
-    return (
-      <div class="title_links title_links_sm">
+      <div class="title_links">
         {item.title}
-        <div class="footer_links mt-2">
-          {item.footerItemLink.map((i) => {
-            return (
-              <span class="footer_link">
-                <a href="">
-                  {i.linkName}
-                </a>
-              </span>
-            );
-          })}
-        </div>
+        <s-abdullakh-footer-links arr={item} />
       </div>
     );
   })
 }
+
 
