@@ -24,7 +24,6 @@ export class FooterA implements ComponentInterface {
  */
 const FooterTitle = (props) => {
   return props.arr.slice(0, 1).map((item) => {
-    console.log(props.firstBlockTitle)
     return (
       <div>
         <div class="corp_info" onClick={() => this.clickOnFooter.emit(event)}>

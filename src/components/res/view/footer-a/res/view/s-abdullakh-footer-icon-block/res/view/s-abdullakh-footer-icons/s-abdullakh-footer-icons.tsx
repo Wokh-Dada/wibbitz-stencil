@@ -23,7 +23,6 @@ export class FooterA implements ComponentInterface {
  */
 const FooterIcon = (props) => {
   return props.arr.map((item) => {
-    console.log(item.name)
     return (
       <div class="social_link mr-3">
         <a href="">

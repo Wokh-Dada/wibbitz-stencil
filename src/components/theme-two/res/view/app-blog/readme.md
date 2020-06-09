@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type  | Default     |
+| -------- | --------- | ----------- | ----- | ----------- |
+| `p`      | `p`       |             | `any` | `undefined` |
+
+
 ## Dependencies
 
 ### Used by

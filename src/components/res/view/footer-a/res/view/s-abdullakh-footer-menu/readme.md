@@ -1,4 +1,4 @@
-# sidebar-a
+# s-abdullakh-footer-menu
 
 
 
@@ -12,24 +12,22 @@
 | `arr`    | `arr`     | массив элементов Sidebar | `any` | `undefined` |
 
 
-## Events
-
-| Event         | Description                      | Type               |
-| ------------- | -------------------------------- | ------------------ |
-| `clickOnNews` | клик по кнопке в компоненте news | `CustomEvent<any>` |
-
-
 ## Dependencies
 
 ### Used by
 
- - [news-a](../../..)
+ - [footer-a](../../..)
+
+### Depends on
+
+- [s-abdullakh-footer-links](./res/view/s-abdullakh-footer-links)
 
 ### Graph
 ```mermaid
 graph TD;
-  news-a --> sidebar-a
-  style sidebar-a fill:#f9f,stroke:#333,stroke-width:4px
+  s-abdullakh-footer-menu --> s-abdullakh-footer-links
+  footer-a --> s-abdullakh-footer-menu
+  style s-abdullakh-footer-menu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

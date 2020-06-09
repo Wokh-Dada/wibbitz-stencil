@@ -15,11 +15,11 @@ export class MyHeader implements ComponentInterface {
   /**
    * клик по конкретному меню
    * */
-  @Event() clickOnMenu: EventEmitter
+  @Event() clickOnHeader: EventEmitter
 
   render() {
     return (
-      <span onClick={() => this.clickOnMenu.emit(this.arr)}>
+      <span onClick={() => this.clickOnHeader.emit(this.arr)}>
           <a >
             {this.arr.linkName}
           </a>

@@ -14,6 +14,11 @@ export class MyHeader implements ComponentInterface {
   @Prop() menu: AbdullakhMyHeader[] = [];
 
   /**
+   * массив меню
+   * */
+  @Prop() theme: boolean;
+
+  /**
    * ссылка на изображение логотипа
    * */
   @Prop() logoUrl: string;
@@ -26,32 +31,17 @@ export class MyHeader implements ComponentInterface {
   /**
    * клик по логотипу
    * */
-  @Event() clickOnLogo: EventEmitter;
+  @Event() clickOnTheme: EventEmitter;
 
   /**
-   * клик по конкретному меню
+   * клик по логотипу
    * */
-  @Event() clickOnMenu: EventEmitter<AbdullakhMyHeader>;
+  @Event() clickOnHeader: EventEmitter;
 
   /**
-   * клик по перключателю тем
+   * клик по Switch Theme
    * */
-  @Event() clickOnSwitch: EventEmitter;
-
-  /**
-   * клик по кнопке search
-   * */
-  @Event() clickOnSeach: EventEmitter;
-
-  /**
-   * клик по input
-   * */
-  @Event() clickOnInput: EventEmitter;
-
-  /**
-   * клик по кнопке подписаться
-   * */
-  @Event() clickOnSubscribeButton: EventEmitter;
+  @Event() clickOnSwitchTheme: EventEmitter;
 
 
   /**
@@ -69,7 +59,7 @@ export class MyHeader implements ComponentInterface {
               <div
                 class="logo"
                 style={{backgroundImage: "url(" + this.logoUrl + ")"}}
-                onClick={() => this.clickOnLogo.emit(this.logoUrl)}
+                onClick={() => this.clickOnHeader.emit(this.logoUrl)}
               >
                 <a class="navbar-brand"/>
               </div>
@@ -88,23 +78,32 @@ export class MyHeader implements ComponentInterface {
                   ref={(el) => this.navMenuTag = el}
                 >
                   <ItemLink arr={this.menu}/>
-                  <span
-                    onClick={() => this.clickOnSwitch.emit()}
-                  >
-                    <a>
-                      <i class="fas fa-toggle-off pl-1"></i>
-                      theme_1
-                    </a>
-                    <a>
-                      <i class="fas fa-toggle-on pl-1"></i>
-                      theme_2
-                    </a>
-                  </span>
+                  {
+                    this.theme ?
+                      <a id="theme_1"
+                         onClick={() => {
+                           this.clickOnTheme.emit();
+                           this.clickOnSwitchTheme.emit(event);
+                         }}
+                      >
+                        <i class="fas fa-toggle-off pl-1"></i>
+                        theme_1
+                      </a> :
+                      <a id="theme_2"
+                         onClick={() => {
+                           this.clickOnTheme.emit();
+                           this.clickOnSwitchTheme.emit(event);
+                         }}
+                      >
+                        <i class="fas fa-toggle-on pl-1"></i>
+                        theme_2
+                      </a>
+                  }
                 </div>
               </nav>
             </div>
             <div class="col-auto d-none d-xl-block">
-              <div class="header_search_block" onClick={() => this.clickOnSeach.emit()}>
+              <div class="header_search_block" onClick={() => this.clickOnHeader.emit(event)}>
                 <a href="#" class="nav-link">
                   <span class="material-icons">
                     search
@@ -117,13 +116,13 @@ export class MyHeader implements ComponentInterface {
                     type="email"
                     placeholder="Enter work email"
                     class="header_subscribe_input"
-                    onClick={() => this.clickOnInput.emit()}
+                    onClick={() => this.clickOnHeader.emit(event)}
                   />
                   <div class="input-group-append">
                     <button
                       class="header_btn"
                       onClick={() => {
-                        this.clickOnSubscribeButton.emit()
+                        this.clickOnHeader.emit(this.subscribeText)
                       }}
                     >
                       <span>

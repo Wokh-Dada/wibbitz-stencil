@@ -44,6 +44,10 @@ export namespace Components {
           * ссылка на изображение логотипа
          */
         "subscribeText": string;
+        /**
+          * массив меню
+         */
+        "theme": boolean;
     }
     interface NewListiner {
         "newlistner": any[];
@@ -323,7 +327,7 @@ declare namespace LocalJSX {
         /**
           * клик по конкретному меню
          */
-        "onClickOnMenu"?: (event: CustomEvent<any>) => void;
+        "onClickOnHeader"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
     }
@@ -337,33 +341,25 @@ declare namespace LocalJSX {
          */
         "menu"?: AbdullakhMyHeader[];
         /**
-          * клик по input
+          * клик по логотипу
          */
-        "onClickOnInput"?: (event: CustomEvent<any>) => void;
+        "onClickOnHeader"?: (event: CustomEvent<any>) => void;
+        /**
+          * клик по Switch Theme
+         */
+        "onClickOnSwitchTheme"?: (event: CustomEvent<any>) => void;
         /**
           * клик по логотипу
          */
-        "onClickOnLogo"?: (event: CustomEvent<any>) => void;
-        /**
-          * клик по конкретному меню
-         */
-        "onClickOnMenu"?: (event: CustomEvent<AbdullakhMyHeader>) => void;
-        /**
-          * клик по кнопке search
-         */
-        "onClickOnSeach"?: (event: CustomEvent<any>) => void;
-        /**
-          * клик по кнопке подписаться
-         */
-        "onClickOnSubscribeButton"?: (event: CustomEvent<any>) => void;
-        /**
-          * клик по перключателю тем
-         */
-        "onClickOnSwitch"?: (event: CustomEvent<any>) => void;
+        "onClickOnTheme"?: (event: CustomEvent<any>) => void;
         /**
           * ссылка на изображение логотипа
          */
         "subscribeText"?: string;
+        /**
+          * массив меню
+         */
+        "theme"?: boolean;
     }
     interface NewListiner {
         "newlistner"?: any[];

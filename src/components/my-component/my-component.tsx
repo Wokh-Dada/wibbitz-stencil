@@ -14,47 +14,41 @@ export class MyComponent {
           menu={header.menu}
           logoUrl={header.logoUrl}
           subscribeText={header.subscribeText}
-          onClickOnLogo={(event) => this.clickOnLogo(event)}
-          onClickOnMenu={(item) => {
-            this.clickOnMenu(item)
-          }}
-          onClickOnSwitch={() => console.log('clickOnSwitch: вы сделали клик по перключателю тем')}
-          onClickOnSeach={() => console.log('clickOnSwitch: вы сделали клик по кнопке search')}
-          onClickOnInput={() => console.log('clickOnInput: вы сделали клик по input')}
-          onClickOnSubscribeButton={() => {
-            console.log('нажали на кнопку button subscribe')
-          }}
+          theme={this.theme}
+          onClickOnTheme={() => this.clickOnTheme()}
+          onClickOnHeader={(event) => this.clickOnHeader(event)}
+          onClickOnSwitchTheme={(event) => this.clickOnSwitchTheme(event)}
         />
-        {/*<news-a*/}
-        {/*  newsImg={firstPage.newsImg}*/}
-        {/*  news={firstPage.news}*/}
-        {/*  sidebar={firstPage.sidebar}*/}
-        {/*  onClickOnNews={(event) => console.log('clickOnNews:', event)}*/}
-        {/*/>*/}
-        {/*<new-post*/}
-        {/*  newPostTitle={firstPage.newPostTitle}*/}
-        {/*  newPost={firstPage.newPost}*/}
-        {/*  onClickNewPost={(event) => this.clickOnNewPost(event)}*/}
-        {/*  onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}*/}
-        {/*/>*/}
-        {/*<popular-resources*/}
-        {/*  popularAsideTitle={firstPage.popularAsideTitle}*/}
-        {/*  popularAside={firstPage.popularAside}*/}
-        {/*  popularBanner={firstPage.popularBanner}*/}
-        {/*  onClickOnPopular={(event) => this.clickOnPopular(event)}*/}
-        {/*/>*/}
-        {/*<events-a*/}
-        {/*  eventsTitle={firstPage.eventsTitle}*/}
-        {/*  events={firstPage.events}*/}
-        {/*  onClickOnEvents={(event) => this.clickOnEvents(event)}*/}
-        {/*  onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}*/}
-        {/*/>*/}
-        {/*<new-listiner*/}
-        {/*  newlistner={firstPage.newlistner}*/}
-        {/*  onClickOnListiner={(event) => this.clickOnListiner(event)}*/}
-        {/*/>*/}
+        <news-a
+          newsImg={firstPage.newsImg}
+          news={firstPage.news}
+          sidebar={firstPage.sidebar}
+          onClickOnNews={(event) => this.clickOnNews(event)}
+        />
+        <new-post
+          newPostTitle={firstPage.newPostTitle}
+          newPost={firstPage.newPost}
+          onClickNewPost={(event) => this.clickOnNewPost(event)}
+          onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}
+        />
+        <popular-resources
+          popularAsideTitle={firstPage.popularAsideTitle}
+          popularAside={firstPage.popularAside}
+          popularBanner={firstPage.popularBanner}
+          onClickOnPopular={(event) => this.clickOnPopular(event)}
+        />
+        <events-a
+          eventsTitle={firstPage.eventsTitle}
+          events={firstPage.events}
+          onClickOnEvents={(event) => this.clickOnEvents(event)}
+          onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}
+        />
+        <new-listiner
+          newlistner={firstPage.newlistner}
+          onClickOnListiner={(event) => this.clickOnListiner(event)}
+        />
 
-        {/*<app-blog p={blog.p}></app-blog>*/}
+        <app-blog p={blog.p}></app-blog>
         <footer-a
           footer={footer}
           onClickOnFooter={(event) => this.clickOnFooter(event)}
@@ -63,25 +57,31 @@ export class MyComponent {
     );
   }
 
-  /**
-   * клик по элементам меню
-   */
-  public clickOnLogo({detail}) {
-    return console.log('clickOnLogo:',  detail)
+  theme = true;
+
+  public clickOnTheme() {
+    this.theme = !this.theme
   }
 
   /**
-   * клик по элементам меню
+   * клик по элементам Header
    */
-  public clickOnMenu({detail}) {
-    return console.log('clickOnMenu:', detail)
+  public clickOnHeader({detail}) {
+    return console.log('clickOnHeader:',  detail)
   }
 
   /**
-   * клик по элементам сайдбара
+   * клик по элементам Toggle theme
    */
-  public clickOnSidebar({detail}) {
-    return console.log("clickOnSidebar:", detail);
+  public clickOnSwitchTheme({detail}) {
+    return console.log('clickOnSwitchTheme:',  detail)
+  }
+
+  /**
+   * клик по элементам clickOnNews
+   */
+  public clickOnNews({detail}) {
+    return console.log("clickOnNews:", detail);
   }
 
   /**

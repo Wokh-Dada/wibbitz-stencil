@@ -130,8 +130,6 @@ export const firstPage = {
       theme: true
     }
   ]
-
-
 };
 
 export const blog = {

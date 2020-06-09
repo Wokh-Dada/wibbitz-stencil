@@ -1,4 +1,4 @@
-# footer-a
+# s-abdullakh-footer-icon-block
 
 
 
@@ -9,7 +9,7 @@
 
 | Property | Attribute | Description | Type  | Default     |
 | -------- | --------- | ----------- | ----- | ----------- |
-| `footer` | `footer`  |             | `any` | `undefined` |
+| `arr`    | `arr`     |             | `any` | `undefined` |
 
 
 ## Events
@@ -23,22 +23,18 @@
 
 ### Used by
 
- - [my-component](../../../my-component)
+ - [footer-a](../../..)
 
 ### Depends on
 
-- [s-abdullakh-footer-menu](./res/view/s-abdullakh-footer-menu)
-- [s-abdullakh-footer-icon-block](./res/view/s-abdullakh-footer-icon-block)
+- [s-abdullakh-footer-icons](./res/view/s-abdullakh-footer-icons)
 
 ### Graph
 ```mermaid
 graph TD;
-  footer-a --> s-abdullakh-footer-menu
-  footer-a --> s-abdullakh-footer-icon-block
-  s-abdullakh-footer-menu --> s-abdullakh-footer-links
   s-abdullakh-footer-icon-block --> s-abdullakh-footer-icons
-  my-component --> footer-a
-  style footer-a fill:#f9f,stroke:#333,stroke-width:4px
+  footer-a --> s-abdullakh-footer-icon-block
+  style s-abdullakh-footer-icon-block fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

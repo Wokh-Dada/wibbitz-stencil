@@ -7,9 +7,16 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type    | Default     |
-| --------- | --------- | ----------- | ------- | ----------- |
-| `newPost` | --        |             | `any[]` | `undefined` |
+| Property | Attribute | Description                              | Type  | Default     |
+| -------- | --------- | ---------------------------------------- | ----- | ----------- |
+| `arr`    | `arr`     | массив блоков в компоненте newSinglePost | `any` | `undefined` |
+
+
+## Events
+
+| Event                  | Description                        | Type               |
+| ---------------------- | ---------------------------------- | ------------------ |
+| `clickOnNewSinglePost` | клик по в компоненте NewSinglePost | `CustomEvent<any>` |
 
 
 ## Dependencies
