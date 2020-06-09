@@ -10,7 +10,7 @@ export class MyComponent {
   render() {
     return (
       <div>
-        <my-header
+        <s-abdullakh-header
           menu={header.menu}
           logoUrl={header.logoUrl}
           subscribeText={header.subscribeText}
@@ -19,37 +19,34 @@ export class MyComponent {
           onClickOnHeader={(event) => this.clickOnHeader(event)}
           onClickOnSwitchTheme={(event) => this.clickOnSwitchTheme(event)}
         />
-        <news-a
+        <s-abdullakh-news
           newsImg={firstPage.newsImg}
           news={firstPage.news}
           sidebar={firstPage.sidebar}
           onClickOnNews={(event) => this.clickOnNews(event)}
         />
-        <new-post
+        <s-abdullakh-new-post
           newPostTitle={firstPage.newPostTitle}
           newPost={firstPage.newPost}
           onClickNewPost={(event) => this.clickOnNewPost(event)}
-          onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}
         />
-        <popular-resources
+        <s-abdullakh-popular-resources
           popularAsideTitle={firstPage.popularAsideTitle}
           popularAside={firstPage.popularAside}
           popularBanner={firstPage.popularBanner}
           onClickOnPopular={(event) => this.clickOnPopular(event)}
         />
-        <events-a
+        <s-abdullakh-events
           eventsTitle={firstPage.eventsTitle}
           events={firstPage.events}
           onClickOnEvents={(event) => this.clickOnEvents(event)}
-          onClickOnNewSinglePost={(event) => this.clickOnNewSinglePost(event)}
         />
-        <new-listiner
+        <s-abdullakh-new-listiner
           newlistner={firstPage.newlistner}
           onClickOnListiner={(event) => this.clickOnListiner(event)}
         />
-
-        <app-blog p={blog.p}></app-blog>
-        <footer-a
+        <s-abdullakh-app-blog p={blog.p}/>
+        <s-abdullakh-footer
           footer={footer}
           onClickOnFooter={(event) => this.clickOnFooter(event)}
         />
@@ -57,8 +54,14 @@ export class MyComponent {
     );
   }
 
+  /**
+   * boolean для вывода кнопок
+   */
   theme = true;
 
+  /**
+   * функция для переключения значения boolean для смены тем
+   */
   public clickOnTheme() {
     this.theme = !this.theme
   }
@@ -99,14 +102,7 @@ export class MyComponent {
   }
 
   /**
-   * клик по ссылке read report в компоненте newpost
-   */
-  public clickOnNewSinglePost({detail}) {
-    return console.log("clickOnNewSinglePost:", detail);
-  }
-
-  /**
-   * клик по элементам aside sidebar в компоненте popular resources
+   * клик по элементам aside s-abdullakh-sidebar в компоненте popular resources
    */
   public clickOnPopular({detail}) {
     return console.log("clickOnPopular:", detail);
@@ -127,7 +123,7 @@ export class MyComponent {
   }
 
   /**
-   * клик по button в компоненете Listiner
+   * клик по button в компоненете Footer
    */
   public clickOnFooter({detail}) {
     return console.log("clickOnFooter:", detail);

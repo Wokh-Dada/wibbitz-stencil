@@ -48,22 +48,22 @@ export const firstPage = {
   newPostTitle: 'New Blog Posts',
   newPost: [
     {
-      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
-      block: 'new-post',
+      img: "https://via.placeholder.com/201x180?text=newPost",
+      block: 's-abdullakh-new-post',
       category: 'Blog Post',
       title: '4 organic ways to improve your website KPIs',
       btnText: 'Read Report'
     },
     {
-      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
-      block: 'new-post',
+      img: "https://via.placeholder.com/201x180?text=newPost",
+      block: 's-abdullakh-new-post',
       category: 'Blog Post',
       title: 'How to turn your next event into a video content goldmine',
       btnText: 'Read Report'
     },
     {
-      newPostImg: "https://via.placeholder.com/201x180?text=newPost",
-      block: 'new-post',
+      img: "https://via.placeholder.com/201x180?text=newPost",
+      block: 's-abdullakh-new-post',
       category: 'Blog Post',
       title: 'How to quickly turn ypur podcast into a video script',
       btnText: 'Read Report'
@@ -100,21 +100,21 @@ export const firstPage = {
   eventsTitle: 'Upcoming Events',
   events: [
     {
-      eventsImg: "https://via.placeholder.com/201x180?text=Event",
+      img: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: '4 organic ways to improve your website KPIs',
       btnText: 'Read Report'
     },
     {
-      eventsImg: "https://via.placeholder.com/201x180?text=Event",
+      img: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: 'How to turn your next event into a video content goldmine',
       btnText: 'Read Report'
     },
     {
-      eventsImg: "https://via.placeholder.com/201x180?text=Event",
+      img: "https://via.placeholder.com/201x180?text=Event",
       block: 'events',
       category: 'Blog Post',
       title: 'How to quickly turn ypur podcast into a video script',

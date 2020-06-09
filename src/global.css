@@ -20,11 +20,13 @@
 a{
   text-decoration: inherit;
   color: inherit;
+  cursor: pointer;
 }
 
 button{
   text-decoration: inherit;
   color: inherit;
+  outline: inherit;
 }
 
 /*button*/
