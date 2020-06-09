@@ -92,8 +92,12 @@ export class MyHeader implements ComponentInterface {
                     onClick={() => this.clickOnSwitch.emit()}
                   >
                     <a>
-                      <i class="fas fa-toggle-off pl-1"/>
+                      <i class="fas fa-toggle-off pl-1"></i>
                       theme_1
+                    </a>
+                    <a>
+                      <i class="fas fa-toggle-on pl-1"></i>
+                      theme_2
                     </a>
                   </span>
                 </div>
