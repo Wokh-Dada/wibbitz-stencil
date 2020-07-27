@@ -6,7 +6,9 @@ export const header = {
     {id: 'Reports', linkName: 'Reports'},
     {id: 'Costumer Stories', linkName: 'Costumer Stories'}
   ],
-  subscribeText: 'Subscribe',
+  searchSubscribe:[
+    { searchIcon:'search' , subscribeText: 'Subscribe'}
+  ]
 };
 
 export const firstPage = {
@@ -123,11 +125,19 @@ export const firstPage = {
   ],
   newlistner: [
     {
-      title: 'Ready to take a test drive?',
-      subtitle: 'We`ll help you elevate strategy. Prices starting from $49 a month.',
-      linkText: 'See pricing',
-      btnText: 'Try it Free',
-      theme: true
+      listnerTitle: [
+        {
+          title: 'Ready to take a test drive?',
+          subtitle: 'We`ll help you elevate strategy. Prices starting from $49 a month.',
+          linkText: 'See pricing',
+        }
+      ],
+      listnerBtn: [
+        {
+          btnText: 'Try it Free',
+          theme: true
+        }
+      ],
     }
   ]
 };
@@ -137,8 +147,8 @@ export const blog = {
     {
       text:
         "##Add to Story## options streamlined into icons\n" +
-        "2. *Project and Workflow State* are grouped together to better visualize their close relationship\n" +
-        "3. *Story Type* is now placed on the right side when creating a new Story for consistency\n"
+        "Project and Workflow State* are grouped together to better visualize their close relationship\n" +
+        "Story Type* is now placed on the right side when creating a new Story for consistency\n"
     }
   ]
 }

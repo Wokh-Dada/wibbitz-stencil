@@ -31,10 +31,7 @@ export class SAbdullakhNewPost implements ComponentInterface {
       <section class="container">
         <div class="row">
           <div class="col-12">
-            <div
-              class="titles titles_new_post"
-              onClick={ () => this.clickNewPost.emit(this.newPostTitle) }
-            >
+            <div class="titles titles_new_post" onClick={() => this.clickNewPost.emit(this.newPostTitle)}>
               {this.newPostTitle}
             </div>
           </div>

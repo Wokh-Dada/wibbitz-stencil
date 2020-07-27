@@ -33,6 +33,8 @@
 ```mermaid
 graph TD;
   s-abdullakh-new-listiner --> s-abdullakh-listiner
+  s-abdullakh-listiner --> s-abdullakh-listiner-title
+  s-abdullakh-listiner --> s-abdullakh-listiner-form
   my-component --> s-abdullakh-new-listiner
   style s-abdullakh-new-listiner fill:#f9f,stroke:#333,stroke-width:4px
 ```

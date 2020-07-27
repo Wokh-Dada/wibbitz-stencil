@@ -1,4 +1,4 @@
-# s-abdullakh-listiner
+# s-abdullakh-listiner-title
 
 
 
@@ -23,20 +23,13 @@
 
 ### Used by
 
- - [s-abdullakh-new-listiner](../../..)
-
-### Depends on
-
-- [s-abdullakh-listiner-title](./res/view/s-abdullakh-litiner-title)
-- [s-abdullakh-listiner-form](./res/view/s-abdullakh-listiner-form)
+ - [s-abdullakh-listiner](../../..)
 
 ### Graph
 ```mermaid
 graph TD;
   s-abdullakh-listiner --> s-abdullakh-listiner-title
-  s-abdullakh-listiner --> s-abdullakh-listiner-form
-  s-abdullakh-new-listiner --> s-abdullakh-listiner
-  style s-abdullakh-listiner fill:#f9f,stroke:#333,stroke-width:4px
+  style s-abdullakh-listiner-title fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

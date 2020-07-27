@@ -10,15 +10,13 @@ export class SAbdullakhAppBlog implements ComponentInterface {
   @Prop() p: any;
 
   render() {
-    const text = this.p.map((item) =>{
-      return(
+    const text = this.p.map((item) => {
+      return (
         <p innerHTML={markdown.toHTML(item.text)}>
 
         </p>
       )
-      }
-
-    )
+    })
     return (
       <section class="container">
         <div class="head_blog_section text-center mt-5">
@@ -71,7 +69,7 @@ export class SAbdullakhAppBlog implements ComponentInterface {
                 </div>
               </div>
 
-              <div >
+              <div>
                 {text}
               </div>
               <p>

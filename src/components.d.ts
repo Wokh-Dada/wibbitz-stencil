@@ -64,13 +64,25 @@ export namespace Components {
         /**
           * ссылка на изображение логотипа
          */
-        "subscribeText": string;
+        "searchSubscribe": any;
         /**
           * массив меню
          */
         "theme": boolean;
     }
     interface SAbdullakhListiner {
+        /**
+          * массив Listener
+         */
+        "arr": any;
+    }
+    interface SAbdullakhListinerForm {
+        /**
+          * массив Listener
+         */
+        "arr": any;
+    }
+    interface SAbdullakhListinerTitle {
         /**
           * массив Listener
          */
@@ -151,6 +163,12 @@ export namespace Components {
          */
         "popularAsideTitle": string;
     }
+    interface SAbdullakhSearchSubscribe {
+        /**
+          * массив меню
+         */
+        "arr": any;
+    }
     interface SAbdullakhSidebar {
         /**
           * массив элементов Sidebar
@@ -219,6 +237,18 @@ declare global {
         prototype: HTMLSAbdullakhListinerElement;
         new (): HTMLSAbdullakhListinerElement;
     };
+    interface HTMLSAbdullakhListinerFormElement extends Components.SAbdullakhListinerForm, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhListinerFormElement: {
+        prototype: HTMLSAbdullakhListinerFormElement;
+        new (): HTMLSAbdullakhListinerFormElement;
+    };
+    interface HTMLSAbdullakhListinerTitleElement extends Components.SAbdullakhListinerTitle, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhListinerTitleElement: {
+        prototype: HTMLSAbdullakhListinerTitleElement;
+        new (): HTMLSAbdullakhListinerTitleElement;
+    };
     interface HTMLSAbdullakhMenuItemElement extends Components.SAbdullakhMenuItem, HTMLStencilElement {
     }
     var HTMLSAbdullakhMenuItemElement: {
@@ -273,6 +303,12 @@ declare global {
         prototype: HTMLSAbdullakhPopularResourcesBannerElement;
         new (): HTMLSAbdullakhPopularResourcesBannerElement;
     };
+    interface HTMLSAbdullakhSearchSubscribeElement extends Components.SAbdullakhSearchSubscribe, HTMLStencilElement {
+    }
+    var HTMLSAbdullakhSearchSubscribeElement: {
+        prototype: HTMLSAbdullakhSearchSubscribeElement;
+        new (): HTMLSAbdullakhSearchSubscribeElement;
+    };
     interface HTMLSAbdullakhSidebarElement extends Components.SAbdullakhSidebar, HTMLStencilElement {
     }
     var HTMLSAbdullakhSidebarElement: {
@@ -290,6 +326,8 @@ declare global {
         "s-abdullakh-footer-menu": HTMLSAbdullakhFooterMenuElement;
         "s-abdullakh-header": HTMLSAbdullakhHeaderElement;
         "s-abdullakh-listiner": HTMLSAbdullakhListinerElement;
+        "s-abdullakh-listiner-form": HTMLSAbdullakhListinerFormElement;
+        "s-abdullakh-listiner-title": HTMLSAbdullakhListinerTitleElement;
         "s-abdullakh-menu-item": HTMLSAbdullakhMenuItemElement;
         "s-abdullakh-new-listiner": HTMLSAbdullakhNewListinerElement;
         "s-abdullakh-new-post": HTMLSAbdullakhNewPostElement;
@@ -299,6 +337,7 @@ declare global {
         "s-abdullakh-popular-resources": HTMLSAbdullakhPopularResourcesElement;
         "s-abdullakh-popular-resources-aside": HTMLSAbdullakhPopularResourcesAsideElement;
         "s-abdullakh-popular-resources-banner": HTMLSAbdullakhPopularResourcesBannerElement;
+        "s-abdullakh-search-subscribe": HTMLSAbdullakhSearchSubscribeElement;
         "s-abdullakh-sidebar": HTMLSAbdullakhSidebarElement;
     }
 }
@@ -392,13 +431,33 @@ declare namespace LocalJSX {
         /**
           * ссылка на изображение логотипа
          */
-        "subscribeText"?: string;
+        "searchSubscribe"?: any;
         /**
           * массив меню
          */
         "theme"?: boolean;
     }
     interface SAbdullakhListiner {
+        /**
+          * массив Listener
+         */
+        "arr"?: any;
+        /**
+          * клик по кнопке button в Listiner
+         */
+        "onClickOnListiner"?: (event: CustomEvent<any>) => void;
+    }
+    interface SAbdullakhListinerForm {
+        /**
+          * массив Listener
+         */
+        "arr"?: any;
+        /**
+          * клик по кнопке button в Listiner
+         */
+        "onClickOnListiner"?: (event: CustomEvent<any>) => void;
+    }
+    interface SAbdullakhListinerTitle {
         /**
           * массив Listener
          */
@@ -527,6 +586,16 @@ declare namespace LocalJSX {
          */
         "popularAsideTitle"?: string;
     }
+    interface SAbdullakhSearchSubscribe {
+        /**
+          * массив меню
+         */
+        "arr"?: any;
+        /**
+          * клик по конкретному меню
+         */
+        "onClickOnHeader"?: (event: CustomEvent<any>) => void;
+    }
     interface SAbdullakhSidebar {
         /**
           * массив элементов Sidebar
@@ -548,6 +617,8 @@ declare namespace LocalJSX {
         "s-abdullakh-footer-menu": SAbdullakhFooterMenu;
         "s-abdullakh-header": SAbdullakhHeader;
         "s-abdullakh-listiner": SAbdullakhListiner;
+        "s-abdullakh-listiner-form": SAbdullakhListinerForm;
+        "s-abdullakh-listiner-title": SAbdullakhListinerTitle;
         "s-abdullakh-menu-item": SAbdullakhMenuItem;
         "s-abdullakh-new-listiner": SAbdullakhNewListiner;
         "s-abdullakh-new-post": SAbdullakhNewPost;
@@ -557,6 +628,7 @@ declare namespace LocalJSX {
         "s-abdullakh-popular-resources": SAbdullakhPopularResources;
         "s-abdullakh-popular-resources-aside": SAbdullakhPopularResourcesAside;
         "s-abdullakh-popular-resources-banner": SAbdullakhPopularResourcesBanner;
+        "s-abdullakh-search-subscribe": SAbdullakhSearchSubscribe;
         "s-abdullakh-sidebar": SAbdullakhSidebar;
     }
 }
@@ -574,6 +646,8 @@ declare module "@stencil/core" {
             "s-abdullakh-footer-menu": LocalJSX.SAbdullakhFooterMenu & JSXBase.HTMLAttributes<HTMLSAbdullakhFooterMenuElement>;
             "s-abdullakh-header": LocalJSX.SAbdullakhHeader & JSXBase.HTMLAttributes<HTMLSAbdullakhHeaderElement>;
             "s-abdullakh-listiner": LocalJSX.SAbdullakhListiner & JSXBase.HTMLAttributes<HTMLSAbdullakhListinerElement>;
+            "s-abdullakh-listiner-form": LocalJSX.SAbdullakhListinerForm & JSXBase.HTMLAttributes<HTMLSAbdullakhListinerFormElement>;
+            "s-abdullakh-listiner-title": LocalJSX.SAbdullakhListinerTitle & JSXBase.HTMLAttributes<HTMLSAbdullakhListinerTitleElement>;
             "s-abdullakh-menu-item": LocalJSX.SAbdullakhMenuItem & JSXBase.HTMLAttributes<HTMLSAbdullakhMenuItemElement>;
             "s-abdullakh-new-listiner": LocalJSX.SAbdullakhNewListiner & JSXBase.HTMLAttributes<HTMLSAbdullakhNewListinerElement>;
             "s-abdullakh-new-post": LocalJSX.SAbdullakhNewPost & JSXBase.HTMLAttributes<HTMLSAbdullakhNewPostElement>;
@@ -583,6 +657,7 @@ declare module "@stencil/core" {
             "s-abdullakh-popular-resources": LocalJSX.SAbdullakhPopularResources & JSXBase.HTMLAttributes<HTMLSAbdullakhPopularResourcesElement>;
             "s-abdullakh-popular-resources-aside": LocalJSX.SAbdullakhPopularResourcesAside & JSXBase.HTMLAttributes<HTMLSAbdullakhPopularResourcesAsideElement>;
             "s-abdullakh-popular-resources-banner": LocalJSX.SAbdullakhPopularResourcesBanner & JSXBase.HTMLAttributes<HTMLSAbdullakhPopularResourcesBannerElement>;
+            "s-abdullakh-search-subscribe": LocalJSX.SAbdullakhSearchSubscribe & JSXBase.HTMLAttributes<HTMLSAbdullakhSearchSubscribeElement>;
             "s-abdullakh-sidebar": LocalJSX.SAbdullakhSidebar & JSXBase.HTMLAttributes<HTMLSAbdullakhSidebarElement>;
         }
     }

@@ -13,38 +13,38 @@ export class MyComponent {
         <s-abdullakh-header
           menu={header.menu}
           logoUrl={header.logoUrl}
-          subscribeText={header.subscribeText}
+          searchSubscribe={header.searchSubscribe}
           theme={this.theme}
           onClickOnTheme={() => this.clickOnTheme()}
           onClickOnHeader={(event) => this.clickOnHeader(event)}
           onClickOnSwitchTheme={(event) => this.clickOnSwitchTheme(event)}
         />
-        <s-abdullakh-news
-          newsImg={firstPage.newsImg}
-          news={firstPage.news}
-          sidebar={firstPage.sidebar}
-          onClickOnNews={(event) => this.clickOnNews(event)}
-        />
-        <s-abdullakh-new-post
-          newPostTitle={firstPage.newPostTitle}
-          newPost={firstPage.newPost}
-          onClickNewPost={(event) => this.clickOnNewPost(event)}
-        />
-        <s-abdullakh-popular-resources
-          popularAsideTitle={firstPage.popularAsideTitle}
-          popularAside={firstPage.popularAside}
-          popularBanner={firstPage.popularBanner}
-          onClickOnPopular={(event) => this.clickOnPopular(event)}
-        />
-        <s-abdullakh-events
-          eventsTitle={firstPage.eventsTitle}
-          events={firstPage.events}
-          onClickOnEvents={(event) => this.clickOnEvents(event)}
-        />
-        <s-abdullakh-new-listiner
-          newlistner={firstPage.newlistner}
-          onClickOnListiner={(event) => this.clickOnListiner(event)}
-        />
+        {/*<s-abdullakh-news*/}
+        {/*  newsImg={firstPage.newsImg}*/}
+        {/*  news={firstPage.news}*/}
+        {/*  sidebar={firstPage.sidebar}*/}
+        {/*  onClickOnNews={(event) => this.clickOnNews(event)}*/}
+        {/*/>*/}
+        {/*<s-abdullakh-new-post*/}
+        {/*  newPostTitle={firstPage.newPostTitle}*/}
+        {/*  newPost={firstPage.newPost}*/}
+        {/*  onClickNewPost={(event) => this.clickOnNewPost(event)}*/}
+        {/*/>*/}
+        {/*<s-abdullakh-popular-resources*/}
+        {/*  popularAsideTitle={firstPage.popularAsideTitle}*/}
+        {/*  popularAside={firstPage.popularAside}*/}
+        {/*  popularBanner={firstPage.popularBanner}*/}
+        {/*  onClickOnPopular={(event) => this.clickOnPopular(event)}*/}
+        {/*/>*/}
+        {/*<s-abdullakh-events*/}
+        {/*  eventsTitle={firstPage.eventsTitle}*/}
+        {/*  events={firstPage.events}*/}
+        {/*  onClickOnEvents={(event) => this.clickOnEvents(event)}*/}
+        {/*/>*/}
+        {/*<s-abdullakh-new-listiner*/}
+        {/*  newlistner={firstPage.newlistner}*/}
+        {/*  onClickOnListiner={(event) => this.clickOnListiner(event)}*/}
+        {/*/>*/}
         <s-abdullakh-app-blog p={blog.p}/>
         <s-abdullakh-footer
           footer={footer}

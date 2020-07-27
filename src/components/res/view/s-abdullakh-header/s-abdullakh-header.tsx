@@ -26,7 +26,7 @@ export class SAbdullakhHeader implements ComponentInterface {
   /**
    * ссылка на изображение логотипа
    * */
-  @Prop() subscribeText: string;
+  @Prop() searchSubscribe: any;
 
   /**
    * клик по логотипу
@@ -56,83 +56,37 @@ export class SAbdullakhHeader implements ComponentInterface {
         <div class="container_update">
           <div class="row main__menu">
             <div class="col-auto">
-              <div
-                class="logo"
-                style={{backgroundImage: "url(" + this.logoUrl + ")"}}
-                onClick={() => this.clickOnHeader.emit(this.logoUrl)}
-              >
+              <div class="logo" style={{backgroundImage: "url(" + this.logoUrl + ")"}}
+                   onClick={() => this.clickOnHeader.emit(this.logoUrl)}>
                 <a class="navbar-brand"/>
               </div>
             </div>
             <div class="col">
               <nav>
-                <a
-                  class="icon"
-                  ref={(el) => this.navOpenTag = el}
-                  onClick={() => this.toggleMobileMenu()}
-                >
+                <a class="icon" ref={(el) => this.navOpenTag = el} onClick={() => this.toggleMobileMenu()}>
                   &#9776;
                 </a>
-                <div
-                  class="topnav" id="none"
-                  ref={(el) => this.navMenuTag = el}
-                >
+                <div class="topnav" id="none" ref={(el) => this.navMenuTag = el}>
                   <ItemLink arr={this.menu}/>
-                  {
-                    this.theme ?
-                      <a id="theme_1"
-                         onClick={() => {
-                           this.clickOnTheme.emit();
-                           this.clickOnSwitchTheme.emit(event);
-                         }}
-                      >
+                  <a onClick={() => {
+                    this.clickOnTheme.emit();
+                    this.clickOnSwitchTheme.emit(event.target);
+                  }}>
+                    {this.theme ?
+                      <span class="iconSpan" id="theme_1">
                         <i class="fas fa-toggle-off pl-1"></i>
                         theme_1
-                      </a> :
-                      <a id="theme_2"
-                         onClick={() => {
-                           this.clickOnTheme.emit();
-                           this.clickOnSwitchTheme.emit(event);
-                         }}
-                      >
+                      </span> :
+                      <span class="iconSpan" id="theme_2">
                         <i class="fas fa-toggle-on pl-1"></i>
                         theme_2
-                      </a>
-                  }
+                      </span>
+                    }
+                  </a>
                 </div>
               </nav>
             </div>
-            <div class="col-auto d-none d-xl-block">
-              <div class="header_search_block" onClick={() => this.clickOnHeader.emit(event)}>
-                <a href="#" class="nav-link">
-                  <span class="material-icons">
-                    search
-                  </span>
-                </a>
-              </div>
-              <div class="header_subscribe_block">
-                <div class="input-group">
-                  <input
-                    type="email"
-                    placeholder="Enter work email"
-                    class="header_subscribe_input"
-                    onClick={() => this.clickOnHeader.emit(event)}
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="header_btn"
-                      onClick={() => {
-                        this.clickOnHeader.emit(this.subscribeText)
-                      }}
-                    >
-                      <span>
-                        {this.subscribeText}
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SearchSubscribe arr={this.searchSubscribe}/>
           </div>
         </div>
       </header>
@@ -163,5 +117,15 @@ const ItemLink = (props) => {
   })
 }
 
+/*
+* компонентная функция для вывода элементов меню
+ */
+const SearchSubscribe = (props) => {
+  return props.arr.map((item) => {
+    return (
+      <s-abdullakh-search-subscribe arr={item}/>
+    );
+  })
+}
 
 

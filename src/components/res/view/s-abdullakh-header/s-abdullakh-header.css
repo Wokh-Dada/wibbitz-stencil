@@ -46,6 +46,10 @@ nav {
   display: none;
 }
 
+.iconSpan {
+  display: inline !important;
+}
+
 @media (max-width: 1010px) {
   #none {
     display: none;

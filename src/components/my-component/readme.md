@@ -30,6 +30,7 @@ graph TD;
   my-component --> s-abdullakh-app-blog
   my-component --> s-abdullakh-footer
   s-abdullakh-header --> s-abdullakh-menu-item
+  s-abdullakh-header --> s-abdullakh-search-subscribe
   s-abdullakh-news --> s-abdullakh-news-main-block
   s-abdullakh-news --> s-abdullakh-sidebar
   s-abdullakh-new-post --> s-abdullakh-new-single-post
@@ -37,6 +38,8 @@ graph TD;
   s-abdullakh-popular-resources --> s-abdullakh-popular-resources-banner
   s-abdullakh-events --> s-abdullakh-new-single-post
   s-abdullakh-new-listiner --> s-abdullakh-listiner
+  s-abdullakh-listiner --> s-abdullakh-listiner-title
+  s-abdullakh-listiner --> s-abdullakh-listiner-form
   s-abdullakh-footer --> s-abdullakh-footer-menu
   s-abdullakh-footer --> s-abdullakh-footer-icon-block
   s-abdullakh-footer-menu --> s-abdullakh-footer-links
