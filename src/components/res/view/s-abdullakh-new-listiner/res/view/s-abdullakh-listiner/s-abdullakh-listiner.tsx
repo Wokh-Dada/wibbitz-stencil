@@ -17,7 +17,6 @@ export class SAbdullakhListiner implements ComponentInterface {
    * */
   @Event() clickOnListiner: EventEmitter;
 
-
   render() {
     return (
       <div class="container_update  newlistiner_section">
@@ -35,7 +34,6 @@ export class SAbdullakhListiner implements ComponentInterface {
  */
 const ListinerTitle = (props) => {
   return props.arr.map((item) => {
-    console.log(item)
     return (
       <div class="col-lg-6 col-12 ">
         <s-abdullakh-listiner-title arr={item}/>
@@ -49,7 +47,6 @@ const ListinerTitle = (props) => {
  */
 const ListinerForm = (props) => {
   return props.arr.map((item) => {
-    console.log(item)
     return (
       <div class="col-lg-6 col-12 px-0 px-md-5">
         <s-abdullakh-listiner-form arr={item}/>

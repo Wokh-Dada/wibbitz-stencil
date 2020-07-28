@@ -74,11 +74,11 @@ export class SAbdullakhHeader implements ComponentInterface {
                   }}>
                     {this.theme ?
                       <span class="iconSpan" id="theme_1">
-                        <i class="fas fa-toggle-off pl-1"></i>
+                        <i class="fas fa-toggle-off pl-1" id="theme_1"></i>
                         theme_1
                       </span> :
                       <span class="iconSpan" id="theme_2">
-                        <i class="fas fa-toggle-on pl-1"></i>
+                        <i class="fas fa-toggle-on pl-1" id="theme_2"></i>
                         theme_2
                       </span>
                     }

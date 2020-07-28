@@ -45,7 +45,7 @@ export class MyComponent {
           newlistner={firstPage.newlistner}
           onClickOnListiner={(event) => this.clickOnListiner(event)}
         />
-        {/*<s-abdullakh-app-blog p={blog.p}/>*/}
+        <s-abdullakh-app-blog p={blog.p}/>
         <s-abdullakh-footer
           footer={footer}
           onClickOnFooter={(event) => this.clickOnFooter(event)}

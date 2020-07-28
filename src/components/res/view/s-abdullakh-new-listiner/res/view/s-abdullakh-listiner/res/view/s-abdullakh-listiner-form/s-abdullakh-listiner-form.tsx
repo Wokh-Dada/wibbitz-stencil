@@ -19,7 +19,6 @@ export class SAbdullakhListinerForm implements ComponentInterface {
 
 
   render() {
-    console.log(this.arr)
     return (
       <div class="newlistiner_form_email">
         <form class="form">
