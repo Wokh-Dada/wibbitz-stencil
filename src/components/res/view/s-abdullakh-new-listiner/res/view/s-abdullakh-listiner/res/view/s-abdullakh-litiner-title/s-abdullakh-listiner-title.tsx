@@ -20,7 +20,7 @@ export class SAbdullakhListinerTitle implements ComponentInterface {
 
   render() {
     return (
-      <div>
+      <div class="listenerTitleWrapper">
         <div class="newlistener_title" onClick={() => this.clickOnListiner.emit(this.arr.title)}>
           {this.arr.title}
         </div>

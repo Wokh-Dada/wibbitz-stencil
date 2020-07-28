@@ -30,12 +30,11 @@ export class SAbdullakhNewSinglePost implements ComponentInterface {
           </div>
           <div class="col">
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 mt-4 mt-lg-0">
                 <div class="">
                   <div class="widget_content">
-                    <div
-                      class="category_blog"
-                      onClick={() => this.clickOnNewSinglePost.emit(this.arr.category)}
+                    <div class="category_blog"
+                         onClick={() => this.clickOnNewSinglePost.emit(this.arr.category)}
                     >
                       {this.arr.category}
                     </div>
@@ -44,8 +43,7 @@ export class SAbdullakhNewSinglePost implements ComponentInterface {
               </div>
               <div class="col-12">
                 <div class="">
-                  <div
-                    class="widget_content_title new_single_post_widget_title"
+                  <div class="widget_content_title new_single_post_widget_title"
                     onClick={() => this.clickOnNewSinglePost.emit(this.arr.title)}
                   >
                     {this.arr.title}

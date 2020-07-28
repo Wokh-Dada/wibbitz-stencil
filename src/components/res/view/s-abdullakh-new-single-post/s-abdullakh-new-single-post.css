@@ -27,3 +27,9 @@
     margin-top: 40px;
   }
 }
+
+@media (max-width: 576px) {
+  .new_single_post_widget_title{
+    font-size: 16px;
+  }
+}

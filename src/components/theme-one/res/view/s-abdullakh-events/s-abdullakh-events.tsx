@@ -32,7 +32,7 @@ export class SAbdullakhEvents implements ComponentInterface {
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="titles" onClick={() => this.clickOnEvents.emit(this.eventsTitle)}>
+            <div class="titles eventTitle" onClick={() => this.clickOnEvents.emit(this.eventsTitle)}>
               {this.eventsTitle}
             </div>
           </div>

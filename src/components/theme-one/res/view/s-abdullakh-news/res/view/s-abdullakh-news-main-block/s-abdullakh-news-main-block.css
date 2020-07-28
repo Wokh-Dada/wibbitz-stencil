@@ -20,8 +20,8 @@
   margin-top: 15px;
   font-weight: bold;
   font-size: 2rem;
-
 }
+
 
 .news_section_subtitle_block{
   font-weight: 400;
@@ -41,9 +41,7 @@
 
 /**************************/
 
-@media (min-width: 576px) {
 
-}
 
 @media (min-width: 768px) {
 
@@ -54,4 +52,18 @@
 }
 
 @media (min-width: 1200px) {
+}
+
+@media (max-width: 576px) {
+  .news_section_title_block{
+    font-size: 1.3rem;
+  }
+
+  .news_section_subtitle_block {
+    font-size: 14px;
+  }
+
+  .new_section_btn {
+    margin-top: 10px;
+  }
 }

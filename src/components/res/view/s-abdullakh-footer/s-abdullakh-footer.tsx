@@ -61,7 +61,7 @@ export class SAbdullakhFooter implements ComponentInterface {
 const FooterItemBlocks = (props) => {
   return props.arr.slice(1, 5).map((item) => {
     return (
-      <div class="col-lg-2 col-sm-4">
+      <div class="col-lg-2 col-sm-4 mt-5 mt-lg-0">
         <s-abdullakh-footer-menu arr={item}/>
       </div>
     );
@@ -74,7 +74,7 @@ const FooterItemBlocks = (props) => {
 const FooterIconBlock = (props) => {
   return props.arr.slice(0, 1).map((item) => {
     return (
-      <div class="col-lg-4 col-sm-4">
+      <div class="col-lg-4 col-sm-4 mt-5 mt-lg-0">
         <s-abdullakh-footer-icon-block arr={item} />
       </div>
     );

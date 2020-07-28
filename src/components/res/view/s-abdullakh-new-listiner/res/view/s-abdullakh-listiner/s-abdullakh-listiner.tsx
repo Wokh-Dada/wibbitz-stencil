@@ -37,7 +37,7 @@ const ListinerTitle = (props) => {
   return props.arr.map((item) => {
     console.log(item)
     return (
-      <div class="col-lg-6 d-none d-lg-block">
+      <div class="col-lg-6 col-12 ">
         <s-abdullakh-listiner-title arr={item}/>
       </div>
     );
@@ -51,7 +51,7 @@ const ListinerForm = (props) => {
   return props.arr.map((item) => {
     console.log(item)
     return (
-      <div class="col-lg-6 col-12 px-5">
+      <div class="col-lg-6 col-12 px-0 px-md-5">
         <s-abdullakh-listiner-form arr={item}/>
       </div>
     );

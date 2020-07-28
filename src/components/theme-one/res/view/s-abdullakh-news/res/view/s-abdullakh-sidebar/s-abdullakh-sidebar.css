@@ -20,3 +20,10 @@
 .right_item_widget{
   flex-direction: row;
 }
+
+@media (max-width: 576px) {
+  .widget_content{
+    margin: 0 0 10px 0!important;
+  }
+}
+

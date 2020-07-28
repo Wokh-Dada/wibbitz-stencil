@@ -1,3 +1,9 @@
 .titles_new_post{
-  margin: 60px 0 40px 0;
+  margin: 80px 0 10px 0!important;
+}
+
+@media (max-width: 576px) {
+  .titles_new_post{
+    font-size: 34px!important;
+  }
 }

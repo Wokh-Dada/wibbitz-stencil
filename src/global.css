@@ -23,10 +23,28 @@ a{
   cursor: pointer;
 }
 
+a:not([href]) {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 button{
+  cursor: pointer;
   text-decoration: inherit;
   color: inherit;
   outline: inherit;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+  text-decoration: inherit;
+  color: inherit;
+  outline: inherit;
+}
+
+input{
+  outline: transparent;
 }
 
 /*button*/
@@ -111,7 +129,6 @@ button{
 /*post*/
 
 @media (min-width: 576px) {
-
 }
 
 @media (min-width: 768px) {
